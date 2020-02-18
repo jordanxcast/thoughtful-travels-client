@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import config from '../config'
+import LandingPage from '../LandingPage/LandingPage'
+import SignUp from '../SignUp/SignUp'
+import Login from '../Login/Login'
 import NavBar from '../NavBar/NavBar'
 import DestListPage from '../DestListPage/DestListPage'
 import DestMainPage from '../DestMainPage/DestMainPage'
@@ -17,13 +20,19 @@ class App extends Component {
     destinations: [],
     items: [],
     entries: [],
+    authToken: null,
   }
 
-  componentDidMount() {
+  authTokenState = authToken => {
+    this.setState({ authToken })
+  }
+
+  handleGetDestinations = () => {
     fetch(`${config.API_ENDPOINT}/destinations`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
+        'Authorization': `Bearer ${this.state.authToken}`
       }
     })
     .then(destinationsRes => {
@@ -136,8 +145,24 @@ class App extends Component {
     return (
       <>
         <Route
+          exact
+          path='/'
+          component={LandingPage}
+        />
+        <Route
+          exact
+          path='/sign-up'
+          component={SignUp}
+        />
+        <Route
+          exact
+          path='/login'
+          component={Login}
+        />
+          
+        <Route
         exact
-        path={'/destinations'}
+        path='/destinations'
         component={DestListPage}
         />
         <Route
@@ -173,6 +198,8 @@ class App extends Component {
       destinations: this.state.destinations,
       items: this.state.items,
       entries: this.state.entries,
+      authToken: this.state.authToken,
+      handleAuthToken: this.authTokenState,
       getItems: this.handleGetItems,
       getEntries: this.handleGetEntries,
       deleteDest: this.handleDeleteDest,

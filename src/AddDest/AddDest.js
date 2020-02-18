@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ApiContext from '../ApiContext'
 import config from '../config'
+import TokenService from '../services/token-service'
+
 import './AddDest.css'
 
 class AddDest extends Component {
@@ -59,15 +61,16 @@ class AddDest extends Component {
       const addDestEndpoint = `${config.API_ENDPOINT}/destinations`
       const options = {
         method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'authorization': `bearer ${TokenService.getAuthToken()}`
+        },
         body: JSON.stringify({
           //destination inputs
           dest_title: destTitle,
           goal_date: goal_date,
           budget: budget
         }),
-        headers: {
-          'content-type': 'application/json'
-        }
       }
       fetch(addDestEndpoint, options)
       .then(res => {
