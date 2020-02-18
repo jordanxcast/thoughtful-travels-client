@@ -4,13 +4,12 @@ import config from '../config'
 import './Item.css'
 
 class Item extends Component {
-  static contextType = ApiContext
+  static contextType = ApiContext;
 
-  handleClickDelete = e => {
-    e.preventDefault()
+  handleClickItemDelete = e => {
+    // e.preventDefault()
     const itemId = this.props.id
-    console.log('itemId:', itemId)
-
+    
     fetch(`${config.API_ENDPOINT}/items/${itemId}`, {
       method: 'DELETE',
       headers: {
@@ -34,7 +33,7 @@ class Item extends Component {
     const { id, content } = this.props
     return (
       <div className='Item' id={id}>
-        <button type='button' className='Item-delete' onClick={this.handleClickDelete}>X</button>
+        <button type='button' className='Item-delete' onClick={this.handleClickItemDelete}>X</button>
         <div className='Item-content'>
           {content}
         </div>

@@ -8,7 +8,6 @@ class DestListPage extends Component {
   static contextType = ApiContext;
   render(){
     const { destinations } = this.context;
-    console.log('DestListPage component:', destinations)
     return (
       <div className='DestListPage'>
         <Link to='/add-destination'>
@@ -19,7 +18,7 @@ class DestListPage extends Component {
             <li key={dest.dest_id}>
               <NavLink      
                 className='DestLink'
-                to={`destinations/${dest.dest_id}`}
+                to={`/destinations/${dest.dest_id}`}
               >
                 {dest.dest_title}
               </NavLink>
@@ -30,7 +29,6 @@ class DestListPage extends Component {
             </li>
           )}
         </ul>
-
       </div>
     );
   }

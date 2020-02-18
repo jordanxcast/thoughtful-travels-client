@@ -4,9 +4,11 @@ import config from '../config'
 import NavBar from '../NavBar/NavBar'
 import DestListPage from '../DestListPage/DestListPage'
 import DestMainPage from '../DestMainPage/DestMainPage'
-// import AddDest from '../AddDest/AddDest'
-// import AddEntry from '../AddEntry/Add'
-// import AddItem from '../AddItem/AddItem'
+import AddDest from '../AddDest/AddDest'
+import AddEntry from '../AddEntry/AddEntry'
+import AddItem from '../AddItem/AddItem'
+import EditDest from '../EditDest/EditDest'
+import EditEntry from '../EditEntry/EditEntry.js'
 import ApiContext from '../ApiContext'
 // import './App.css';
 
@@ -32,7 +34,6 @@ class App extends Component {
       return destinationsRes.json()
     })
     .then(destinations => {
-      console.log('Destinations:', destinations)
       this.setState({destinations})
     })
     .catch(err => {
@@ -53,7 +54,7 @@ class App extends Component {
 
   handleDeleteDest = destId => {
     this.setState({
-      destinations: this.state.destinations.filter(d => d.id !== destId)
+      destinations: this.state.destinations.filter(d => d.dest_id !== destId)
     })
   }
 
@@ -68,6 +69,7 @@ class App extends Component {
   }
 
   handleDeleteItem = (itemId) => {
+    console.log('items in state at delete:', this.state.items)
     this.setState({
       items: this.state.items.filter(item => item.item_id !== itemId)
     })
@@ -86,7 +88,7 @@ class App extends Component {
   }
 
   handleGetItems = destId => {
-    fetch(`${config.API_ENDPOINT}/destinations/${destId}`, {
+    fetch(`${config.API_ENDPOINT}/items/${destId}`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json'
@@ -100,7 +102,6 @@ class App extends Component {
       return itemsRes.json()
     })
     .then(items => {
-      console.log('Items response:', items)
       this.setState({items})
     })
     .catch(err =>  {
@@ -124,7 +125,6 @@ class App extends Component {
       return entriesRes.json()
     })
     .then(entries => {
-      console.log('Items response:', entries)
       this.setState({entries})
     })
     .catch(err =>  {
@@ -146,15 +146,23 @@ class App extends Component {
         />
         <Route 
           path='/add-destination'
-          component={DestListPage}
+          component={AddDest}
         />
         <Route 
-          path='/destinations/:destId/add-item'
-          component={DestListPage}
+          path='/:destId/add-item'
+          component={AddItem}
         />
         <Route 
-          path='/destinations/:destId/add-entry'
-          component={DestListPage}
+          path='/:destId/add-entry'
+          component={AddEntry}
+        />
+        <Route 
+          path='/:destId/edit-destination'
+          component={EditDest}
+        />
+        <Route 
+          path='/:destId/edit-entry'
+          component={EditEntry}
         />
       </>
     )
@@ -168,8 +176,10 @@ class App extends Component {
       getItems: this.handleGetItems,
       getEntries: this.handleGetEntries,
       deleteDest: this.handleDeleteDest,
-      deleteEntry: this.handleDeleteEntry,
       deleteItem: this.handleDeleteItem,
+      deleteEntry: this.handleDeleteEntry,
+      addItem: this.handleAddItem,
+      addEntry: this.handleAddEntry
     }
     return (
       <ApiContext.Provider value={value}>

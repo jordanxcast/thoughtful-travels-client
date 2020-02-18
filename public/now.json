@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "alias": "jc-t-travels",
+  "name": "thoughtful-travels",
+  "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+  ]
+}

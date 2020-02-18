@@ -10,12 +10,10 @@ class Entry extends Component {
   handleClickDelete = e => {
     e.preventDefault()
     const entryId = this.props.id
-    console.log('entryId:', entryId)
    
     fetch(`${config.API_ENDPOINT}/entries/${entryId}`, {
       method: 'DELETE',
       headers: {
-
         'content-type': 'application/json'
       },
     })
@@ -26,8 +24,6 @@ class Entry extends Component {
         }
       })
       .then(() => {
-        console.log('entries state in handleDeleteEntry:', this.context.entries)
-
         this.context.deleteEntry(entryId)
       })
       .catch(err => {
@@ -55,8 +51,6 @@ class Entry extends Component {
         </button>
       </div>
     )
-     
-    
   }
 }
 
