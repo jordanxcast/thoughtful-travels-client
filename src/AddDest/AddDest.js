@@ -41,7 +41,7 @@ class AddDest extends Component {
     })
   }
 
-  handleSubmit(e) {
+  handleSubmit = (e) => {
     e.preventDefault()
 
     const destTitle = e.target.destName.value
@@ -69,7 +69,7 @@ class AddDest extends Component {
           //destination inputs
           dest_title: destTitle,
           goal_date: goal_date,
-          budget: budget
+          budget: budget,
         }),
       }
       fetch(addDestEndpoint, options)
@@ -81,9 +81,9 @@ class AddDest extends Component {
       })
       .then(dest => {
         const destId = dest.dest_id;
-        console.log(destId)
-        this.context.AddDest(dest)
-        this.props.history.push(`/destinations`)
+        console.log('dest ', dest)
+        this.context.addDest(dest)
+        this.props.history.push(`/destinations/${destId}`)
       })
       .catch(err => console.error(err.message))
     }

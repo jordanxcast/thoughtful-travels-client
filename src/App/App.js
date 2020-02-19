@@ -16,12 +16,16 @@ import ApiContext from '../ApiContext'
 // import './App.css';
 
 class App extends Component {
-  state = {
+  constructor(props){
+    super(props)
+  
+  this.state = {
     destinations: [],
     items: [],
     entries: [],
     authToken: null,
-  }
+  }  
+}
 
   authTokenState = authToken => {
     this.setState({ authToken })
@@ -50,9 +54,12 @@ class App extends Component {
     });
   }
 
+
   //handler methods 
-  handleAddDest = (newDest) => {
-    this.setState({
+  handleAddDest(newDest) {
+    console.log(this, '!!!!!!!!')
+    console.log('Destinations in state:', this.state.destinations)
+    return this.setState({
       destinations: 
       [
         ...this.state.destinations,
@@ -200,11 +207,13 @@ class App extends Component {
       entries: this.state.entries,
       authToken: this.state.authToken,
       handleAuthToken: this.authTokenState,
+      getDestinations: this.handleGetDestinations,
       getItems: this.handleGetItems,
       getEntries: this.handleGetEntries,
       deleteDest: this.handleDeleteDest,
       deleteItem: this.handleDeleteItem,
       deleteEntry: this.handleDeleteEntry,
+      addDest: this.handleAddDest.bind(this),
       addItem: this.handleAddItem,
       addEntry: this.handleAddEntry
     }

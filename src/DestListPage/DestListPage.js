@@ -4,10 +4,16 @@ import ApiContext from '../ApiContext'
 import './DestListPage.css'
 
 class DestListPage extends Component {
-
   static contextType = ApiContext;
+
+  // componentDidMount() {
+  //   this.context.getDestinations()
+  // }
+
   render(){
+    this.context.getDestinations()
     const { destinations } = this.context;
+    
     return (
       <div className='DestListPage'>
         <Link to='/add-destination'>

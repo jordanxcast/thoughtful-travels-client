@@ -39,7 +39,7 @@ export default class NavBar extends Component {
   }
 
   render() {
-    console.log(this.context.authToken)
+
     return (
       <>
         <nav className='NavBar'>
