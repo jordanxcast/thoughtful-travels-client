@@ -13,10 +13,13 @@ class DestListPage extends Component {
   render(){
     this.context.getDestinations()
     const { destinations } = this.context;
+    if(!this.context.authToken){
+        this.props.history.push('/login')
+    }
     
     return (
       <div className='DestListPage'>
-        <Link to='/add-destination'>
+        <Link to='/add-destination' className='DestList-add-dest'>
           + Add Destination
         </Link>
         <ul className='DestListPage_List'>

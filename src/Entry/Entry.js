@@ -35,20 +35,23 @@ class Entry extends Component {
     const { subject, created, body, id } = this.props
     return (
       <div className='Entry' id={id}>
-        <div className='Entry-subject'>
-          {subject}
+        <div className='Entry-info-top'>
+          <div className='Entry-subject'>
+            {subject}
+          </div>
+          <div className='Entry-date'>
+            Created on:
+            <div className='Date'>{created}</div>
+          </div>
         </div>
-        <div className='Entry-date'>
-          Created on:
-          <span className='Date'>{created}</span>
-        </div>
-      
-        <div className='Entry-body'>
-        {body}
-        </div>
-        <button type='button' className='Entry-delete' onClick={this.handleClickDelete}>
-          X
-        </button>
+        <div className='Entry-body-delete'>
+          <div className='Entry-body'>
+          {body}
+          </div>
+          <button type='button' className='Entry-delete' onClick={this.handleClickDelete}>
+              Delete this entry
+          </button>
+          </div>
       </div>
     )
   }

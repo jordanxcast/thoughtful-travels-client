@@ -1,0 +1,50 @@
+.Entry{
+  margin-top: 30px;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+.Entry-info-top {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 1px dashed black;
+  justify-content: space-between;
+  padding: 10px 30px;
+}
+
+.Entry-subject{
+  font-size: 18px;
+  align-self: center;
+}
+
+.Entry-date {
+  /* margin-right: 30px; */
+  color: grey;
+  font-size: 14px;
+}
+
+.Entry-body {
+  font-size: 16px;
+  padding: 40px;
+}
+
+.Entry-body-delete {
+  display: flex;
+  flex-direction: column;
+  padding: 20px
+}
+
+.Entry-delete {
+  width: 20%;
+  align-self: center;
+  margin-top: 10px;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.Entry-delete:hover {
+  border-color: red;
+  color: red;
+  cursor: pointer;
+}

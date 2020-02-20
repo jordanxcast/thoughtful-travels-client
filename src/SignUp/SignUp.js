@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AuthApiService from '../services/auth-api-services'
+import './SignUp.css'
 
 export default class SignUpForm extends Component {
   static defaultProps = {
@@ -48,7 +49,7 @@ export default class SignUpForm extends Component {
         </div> */}
         <div className='full_name'>
           <label htmlFor='SignUpForm__full_name'>
-            Full name 
+            Full Name 
           </label>
           <input
             name='full_name'
@@ -59,7 +60,7 @@ export default class SignUpForm extends Component {
         </div>
         <div className='user_name'>
           <label htmlFor='SignUpForm__user_name'>
-            User name 
+            Username 
           </label>
           <input
             name='user_name'
@@ -79,7 +80,7 @@ export default class SignUpForm extends Component {
             id='SignUpForm__password'>
           </input>
         </div>
-        <button type='submit'>
+        <button type='submit' className='SignUp-submit'>
           Sign Up
         </button>
       </form>

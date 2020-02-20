@@ -1,0 +1,18 @@
+.Item {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20%;
+}
+
+
+
+.Item-delete {
+  margin-right: 10px;
+  border: none;
+
+}
+
+.Item-delete:hover {
+  color: red;
+  cursor: pointer;
+} 

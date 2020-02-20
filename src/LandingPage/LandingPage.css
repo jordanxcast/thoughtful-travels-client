@@ -1,0 +1,35 @@
+main {
+  text-align: center;
+  
+}
+
+section {
+  padding: 20px;
+}
+
+.LP-sections > section:nth-child(even) {
+  background-color: #878E99;
+}
+
+.LP-header {
+  color: #131B23;
+  position: relative;
+  top: 60px;
+  background-color: #FAE3E3;
+  box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75);
+  padding: 30px;
+  margin: 0;
+  
+}
+
+.LP-sections{
+  position: relative;
+  top: 80px;
+}
+.LP-link {
+  text-decoration: none;
+  color: #656176;
+}
+.LP-link:hover {
+  color:  #A8BCA1;
+}

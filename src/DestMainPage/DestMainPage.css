@@ -1,0 +1,51 @@
+.DestMainPage {
+  position: relative;
+  top: 65px;
+  
+}
+
+.DestMainPage-back{
+  position: absolute;
+  left: 20px;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.DestMainPage-overview {
+  box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75);
+}
+
+.DestMainPage-buttons > button {
+  margin: 30px 20px 0 20px;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.Dest-delete:hover{
+  cursor: pointer;
+  color: red;
+}
+
+.DestMainPage-add {
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.Dest-completed:hover,
+.button-link:hover {
+  cursor: pointer;
+  color: #A8BCA1;
+}
+
+.button-link{
+  text-decoration: none;
+  color: black;
+}
+
+.DestMainPage-items {
+  border-bottom: 1px solid grey;
+
+}

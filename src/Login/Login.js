@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TokenService from '../services/token-service'
 import AuthApiService from '../services/auth-api-services'
 import ApiContext from '../ApiContext'
+import './Login.css'
 
 export default class Login extends Component {
 static contextType = ApiContext
@@ -68,10 +69,10 @@ render() {
           id='Login-password'
         >
         </input>
-        <button type='submit'>
-          Login
-        </button>
       </div>
+      <button type='submit' className='Login-submit'>
+        Login
+      </button>
 
     </form>
   )

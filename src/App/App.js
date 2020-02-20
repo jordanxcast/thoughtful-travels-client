@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import config from '../config'
+import PrivateRoute from '../Utils/PrivateRoute'
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import LandingPage from '../LandingPage/LandingPage'
 import SignUp from '../SignUp/SignUp'
 import Login from '../Login/Login'
@@ -10,8 +12,6 @@ import DestMainPage from '../DestMainPage/DestMainPage'
 import AddDest from '../AddDest/AddDest'
 import AddEntry from '../AddEntry/AddEntry'
 import AddItem from '../AddItem/AddItem'
-import EditDest from '../EditDest/EditDest'
-import EditEntry from '../EditEntry/EditEntry.js'
 import ApiContext from '../ApiContext'
 // import './App.css';
 
@@ -54,11 +54,18 @@ class App extends Component {
     });
   }
 
-
+  handleEditDest = updateDest => {
+    const newDestinations = this.state.destinations.map(dest => 
+      (dest.dest_id === updateDest.dest_id)
+        ? updateDest
+        : dest
+    )
+    this.setState({
+      destinations: newDestinations
+    })
+ }  
   //handler methods 
-  handleAddDest(newDest) {
-    console.log(this, '!!!!!!!!')
-    console.log('Destinations in state:', this.state.destinations)
+  handleAddDest = (newDest) => {
     return this.setState({
       destinations: 
       [
@@ -151,51 +158,42 @@ class App extends Component {
   renderMainRoutes() {
     return (
       <>
-        <Route
+        <Switch>
+          <Route
+            exact
+            path='/'
+            component={LandingPage}
+          />
+          <PublicOnlyRoute
+            path='/sign-up'
+            component={SignUp}
+          />
+          <PublicOnlyRoute
+            path='/login'
+            component={Login}
+          /> 
+          <PrivateRoute
           exact
-          path='/'
-          component={LandingPage}
-        />
-        <Route
-          exact
-          path='/sign-up'
-          component={SignUp}
-        />
-        <Route
-          exact
-          path='/login'
-          component={Login}
-        />
-          
-        <Route
-        exact
-        path='/destinations'
-        component={DestListPage}
-        />
-        <Route
-          path='/destinations/:destId'
-          component={DestMainPage}
-        />
-        <Route 
-          path='/add-destination'
-          component={AddDest}
-        />
-        <Route 
-          path='/:destId/add-item'
-          component={AddItem}
-        />
-        <Route 
-          path='/:destId/add-entry'
-          component={AddEntry}
-        />
-        <Route 
-          path='/:destId/edit-destination'
-          component={EditDest}
-        />
-        <Route 
-          path='/:destId/edit-entry'
-          component={EditEntry}
-        />
+          path='/destinations'
+          component={DestListPage}
+          />
+          <PrivateRoute
+            path='/destinations/:destId'
+            component={DestMainPage}
+          />
+          <Route 
+            path='/add-destination'
+            component={AddDest}
+          />
+          <Route 
+            path='/:destId/add-item'
+            component={AddItem}
+          />
+          <Route 
+            path='/:destId/add-entry'
+            component={AddEntry}
+          />
+        </Switch>
       </>
     )
   }
@@ -213,9 +211,10 @@ class App extends Component {
       deleteDest: this.handleDeleteDest,
       deleteItem: this.handleDeleteItem,
       deleteEntry: this.handleDeleteEntry,
-      addDest: this.handleAddDest.bind(this),
+      addDest: this.handleAddDest,
       addItem: this.handleAddItem,
-      addEntry: this.handleAddEntry
+      addEntry: this.handleAddEntry,
+      editDest: this.handleEditDest,
     }
     return (
       <ApiContext.Provider value={value}>

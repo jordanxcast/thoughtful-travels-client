@@ -1,0 +1,21 @@
+.Login{
+  margin-top: 150px;
+  border: 1px solid black;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Login-submit {
+  align-self: center;
+  width: 50%;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #627C85;
+  border-radius: 20px;
+}
+
+.Login-submit:hover {
+  cursor: pointer;
+  border-color: #FAE3E3;
+}

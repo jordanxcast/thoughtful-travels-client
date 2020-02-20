@@ -1,0 +1,21 @@
+.AddItem {
+  position: relative;
+  top: 100px;
+}
+
+.add-item-button-group > button{
+  margin: 30px 20px 0 20px;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.add-item-button:hover{
+  cursor: pointer;
+  color: #A8BCA1;
+}
+
+.cancel-add-item-button:hover{
+  cursor: pointer;
+  color: red;
+}

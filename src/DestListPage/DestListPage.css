@@ -1,0 +1,25 @@
+.DestListPage {
+  position: relative;
+  top: 100px;
+  border: 1px solid black;
+  padding: 30px;
+}
+
+.DestList-add-dest {
+  text-decoration: none;
+  border: 1px solid black;
+  position: absolute;
+  left: 20px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.DestLink {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+li {
+  list-style: none;
+}

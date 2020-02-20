@@ -1,0 +1,21 @@
+.AddEntry {
+  position: relative;
+  top: 100px;
+}
+
+.add-entry-button-group > button{
+  margin: 30px 20px 0 20px;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.add-entry-button:hover{
+  cursor: pointer;
+  color: #A8BCA1;
+}
+
+.cancel-add-entry-button:hover{
+  cursor: pointer;
+  color: red;
+}

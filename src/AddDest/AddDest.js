@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import ApiContext from '../ApiContext'
 import config from '../config'
 import TokenService from '../services/token-service'
-
 import './AddDest.css'
 
 class AddDest extends Component {
@@ -81,7 +80,6 @@ class AddDest extends Component {
       })
       .then(dest => {
         const destId = dest.dest_id;
-        console.log('dest ', dest)
         this.context.addDest(dest)
         this.props.history.push(`/destinations/${destId}`)
       })
@@ -98,13 +96,21 @@ class AddDest extends Component {
         >
           <h2>Add Your Next Destination</h2>
           <div className='form-group'>
-            <label htmlFor='dest-name'>Destination Title:</label>
-            <input className='dest-name' id='dest-name' name='destName' type='text' required/>
+            <div className='AddDest-title'>
+              <label htmlFor='dest-name'>* Destination Title:</label>
+              <input className='dest-name' id='dest-name' name='destName' type='text' required/>
+            </div>
+           
             {/* {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)} */}
-            <label htmlFor='dest-date'>Goal Date</label>
-            <input className='dest-date' id='dest-date' name='destDate' type='date'/>
-            <label htmlFor='dest-budget'>Budget</label>
-            <input className='dest-budget' id='dest-budget' name='destBudget' type='number'/>
+            <div className='AddDest-date'>
+              <label htmlFor='dest-date'>Goal Date:</label>
+              <input className='dest-date' id='dest-date' name='destDate' type='date'/>
+            </div>
+
+            <div className='AddDest-budget'>
+              <label htmlFor='dest-budget'>Budget:</label>
+              <input className='dest-budget' id='dest-budget' name='destBudget' type='number'/>
+            </div>
           </div>
 
           <div className='add-dest-button-group'>

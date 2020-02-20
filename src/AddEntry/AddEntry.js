@@ -99,7 +99,7 @@ class AddEntry extends Component {
           <div className='add-entry-button-group'>
             <button
               type='reset'
-              className='add-entry-button'
+              className='cancel-add-entry-button'
               onClick={() => this.props.history.push(`/destinations/${dest_id}`)}
             >
               Cancel

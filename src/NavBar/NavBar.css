@@ -1,0 +1,31 @@
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border: 1px solid black;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: #131B23;
+  color: #F2F7F2;
+  box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75);
+  z-index: 12;
+}
+
+.NavBar-link {
+  text-decoration: none;
+  color: #F2F7F2;
+}
+
+.NavBar-link:active {
+  color: #656176;
+}
+
+.NavBar-link:hover {
+  color: #656176;
+}
+
+.NavBar_not-logged-in > .NavBar-link {
+  margin-left: 20px;
+}
