@@ -89,13 +89,16 @@ class AddDest extends Component {
 
   render() {
     return (
+      <div className='AddDest-container'> 
+
+      
       <div className='AddDest'>
         <form
           className='AddDest-form'
           onSubmit={(e) => this.handleSubmit(e)}
         >
           <h2>Add Your Next Destination</h2>
-          <div className='form-group'>
+          <div className='AddDest-form-group'>
             <div className='AddDest-title'>
               <label htmlFor='dest-name'>* Destination Title:</label>
               <input className='dest-name' id='dest-name' name='destName' type='text' required/>
@@ -108,7 +111,7 @@ class AddDest extends Component {
             </div>
 
             <div className='AddDest-budget'>
-              <label htmlFor='dest-budget'>Budget:</label>
+              <label htmlFor='dest-budget'>Budget ($):</label>
               <input className='dest-budget' id='dest-budget' name='destBudget' type='number'/>
             </div>
           </div>
@@ -130,6 +133,7 @@ class AddDest extends Component {
             </button>
           </div>
         </form>
+      </div>
       </div>
     )
   }

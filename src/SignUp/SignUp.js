@@ -39,50 +39,53 @@ export default class SignUpForm extends Component {
   render() {
     // const { error } = this.state
     return (
-      <form
-        className='SignUpForm'
-        onSubmit={this.handleSubmit}
-      >
-        {/* <div role='alert'>
-          {error && <p className='red'>{error}</p>}
-        </div> */}
-        <div className='full_name'>
-          <label htmlFor='SignUpForm__full_name'>
-            Full Name 
-          </label>
-          <input
-            name='full_name'
-            type='text'
-            required
-            id='SignUpForm__full_name'>
-          </input>
-        </div>
-        <div className='user_name'>
-          <label htmlFor='SignUpForm__user_name'>
-            Username 
-          </label>
-          <input
-            name='user_name'
-            type='text'
-            required
-            id='SignUpForm__user_name'>
-          </input>
-        </div>
-        <div className='password'>
-          <label htmlFor='SignUpForm__password'>
-            Password 
-          </label>
-          <input
-            name='password'
-            type='password'
-            required
-            id='SignUpForm__password'>
-          </input>
-        </div>
-        <button type='submit' className='SignUp-submit'>
-          Sign Up
-        </button>
-      </form>
+      <div className='SignUp'>
+        <form
+          className='SignUpForm'
+          onSubmit={this.handleSubmit}
+        >
+          <h1>Create your Thoughtful Tavels Account</h1>
+          {/* <div role='alert'>
+            {error && <p className='red'>{error}</p>}
+          </div> */}
+          <div className='full_name'>
+            <label htmlFor='SignUpForm__full_name'>
+              *Full Name 
+            </label>
+            <input
+              name='full_name'
+              type='text'
+              required
+              id='SignUpForm__full_name'>
+            </input>
+          </div>
+          <div className='user_name'>
+            <label htmlFor='SignUpForm__user_name'>
+              *Username 
+            </label>
+            <input
+              name='user_name'
+              type='text'
+              required
+              id='SignUpForm__user_name'>
+            </input>
+          </div>
+          <div className='password'>
+            <label htmlFor='SignUpForm__password'>
+              *Password 
+            </label>
+            <input
+              name='password'
+              type='password'
+              required
+              id='SignUpForm__password'>
+            </input>
+          </div>
+          <button type='submit' className='SignUp-submit'>
+            Sign Up
+          </button>
+        </form>
+      </div>
     )
   }
 }

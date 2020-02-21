@@ -45,6 +45,7 @@ class DestMainPage extends Component {
       return res.json()
     })
     .then((dest) => {
+      console.log(dest.goal_date)
       this.setState({
         currentDest : dest
       })
@@ -185,17 +186,20 @@ class DestMainPage extends Component {
           })}
           <button type='button' className='DestMainPage-add'>
             <Link to={`/${destId}/add-item`} className='button-link'>
-              <FontAwesomeIcon icon='plus-circle' /> Item
+              <FontAwesomeIcon icon='plus-circle' />  Item
             </Link>
           </button>
         </section>
         <section className='DestMainPage-entries'>
-          <h2 className='Entry-header'>My Entries</h2>
-          <button type='button' className='DestMainPage-add'>
-            <Link to={`/${destId}/add-entry`} className='button-link'> 
-              <FontAwesomeIcon icon='plus-circle' />  Journal Entry 
-            </Link>
-          </button>
+          <div className='Entries-header-container'>
+            <h2 className='Entry-header'>My Entries</h2>
+            <button type='button' className='DestMainPage-add-entry'>
+              <Link to={`/${destId}/add-entry`} className='button-link'> 
+                <FontAwesomeIcon icon='plus-circle' />  Journal Entry 
+              </Link>
+            </button>
+          </div>
+        
 
           {entries.map(entry => {
             return <Entry 
@@ -203,7 +207,9 @@ class DestMainPage extends Component {
               id={entry.id}
               subject={entry.subject}
               body={entry.body}
-              created={entry.date_created}
+              created={entry.date_created ? new Date(entry.date_created).toDateString() : entry.date_created}
+              // {entry.date_created}
+              
             />
           })}
         </section>

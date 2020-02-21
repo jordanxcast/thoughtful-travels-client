@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import { format } from 'date-fns'
 import ApiContext from '../ApiContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import config from '../config'
 import './Entry.css'
 
@@ -42,6 +43,7 @@ class Entry extends Component {
           <div className='Entry-date'>
             Created on:
             <div className='Date'>{created}</div>
+            
           </div>
         </div>
         <div className='Entry-body-delete'>
@@ -49,7 +51,7 @@ class Entry extends Component {
           {body}
           </div>
           <button type='button' className='Entry-delete' onClick={this.handleClickDelete}>
-              Delete this entry
+          <FontAwesomeIcon icon='trash' className='delete-dest'/> this entry
           </button>
           </div>
       </div>

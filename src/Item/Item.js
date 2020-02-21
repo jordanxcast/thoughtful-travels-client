@@ -35,7 +35,7 @@ class Item extends Component {
     return (
       <div className='Item' id={id}>
         <button type='button' className='Item-delete' onClick={this.handleClickItemDelete}>
-          <FontAwesomeIcon icon='times' />
+          <FontAwesomeIcon icon='times' className='Item-x'/>
         </button>
         <div className='Item-content'>
           {content}

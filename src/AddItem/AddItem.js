@@ -79,7 +79,7 @@ class AddItem extends Component {
           onSubmit={(e) => this.handleSubmit(e)}
         >
           <h2>Add a Bucketlist Item</h2>
-          <div className='form-group'>
+          <div className='AddItem-form-group'>
             <label htmlFor='Item-content'>Item:</label>
             <input className='item-content' id='item-content' name='itemContent' type='text'/>
             {/* {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)} */}

@@ -2,14 +2,26 @@
   display: flex;
   flex-direction: row;
   padding-left: 20%;
+  font-size: 18px;
 }
-
-
 
 .Item-delete {
   margin-right: 10px;
   border: none;
+  padding-top: 2px;
+  background-color: rgba(196, 207, 204, 0.85);
+  height: 20px;
+  align-self: center;
+  border: 1px solid black;
+  border-radius: 30px;
+}
 
+
+.Item-x {
+  background-color: rgba(196, 207, 204, 0.85);
+  /* padding: 0; */
+  justify-self: center;
+  vertical-align: center;
 }
 
 .Item-delete:hover {

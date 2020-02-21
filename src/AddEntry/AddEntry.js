@@ -88,7 +88,7 @@ class AddEntry extends Component {
           onSubmit={(e) => this.handleSubmit(e)}
         >
           <h2>Add a Journal Entry</h2>
-          <div className='form-group'>
+          <div className='AddEntry-form-group'>
             <label htmlFor='entry-subject'>Subject:</label>
             <input className='entry-subject' id='entry-subject' name='entrySubject' type='text'/>
             {/* {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)} */}

@@ -1,3 +1,9 @@
+.SignUp {
+  background-color: #878E99;
+  height: 100vh;
+  margin: 0;
+}
+
 .SignUpForm {
   position: relative;
   top: 100px;
@@ -5,13 +11,30 @@
   border-radius: 20px;
   padding: 30px;
   margin: 0 10%;
+  box-shadow: 0px 0px 5px 6px rgba(0,0,0,0.7);
+  background-color: #B3BFB8;
+  color: #131B23;
+}
+
+.SignUpForm > h1 {
+  margin-bottom: 50px;
+}
+
+.full_name > input,
+.user_name > input,
+.password > input {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 label {
   margin-right: 20px;
+  font-size: 18px;
 }
 
 .full_name, .user_name, .password {
   margin-bottom: 20px;
+  
 }
 
 .SignUp-submit {

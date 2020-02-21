@@ -45,34 +45,37 @@ handleSubmitJwtAuth = e => {
 render() {
 
   return (
-    <form
-      className='Login'
-      onSubmit={this.handleSubmitJwtAuth}
-    >
-      <div className='user_name'>
-        <label htmlFor='Login-user-name'>
-          User name
-        </label>
-        <input
-          name='user_name'
-          id='Login-user-name'>
-        </input>
-      </div>
-      <div className='password'>
-        <label htmlFor='Login-password'>
-          Password
-        </label>
-        <input
-          name='password'
-          type='password'
-          id='Login-password'
-        >
-        </input>
-      </div>
-      <button type='submit' className='Login-submit'>
-        Login
-      </button>
-    </form>
+    <div className='Login-container'>
+      <form
+        className='Login'
+        onSubmit={this.handleSubmitJwtAuth}
+      >
+        <h1>Login to Begin your Journey</h1>
+        <div className='user_name'>
+          <label htmlFor='Login-user-name'>
+            *User name
+          </label>
+          <input
+            name='user_name'
+            id='Login-user-name'>
+          </input>
+        </div>
+        <div className='password'>
+          <label htmlFor='Login-password'>
+            *Password
+          </label>
+          <input
+            name='password'
+            type='password'
+            id='Login-password'
+          >
+          </input>
+        </div>
+        <button type='submit' className='Login-submit'>
+          Login
+        </button>
+      </form>
+    </div>
   )
 }
 }
