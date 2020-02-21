@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faCompass} from '@fortawesome/free-solid-svg-icons'
 import TokenService from '../services/token-service'
 import ApiContext from '../ApiContext'
 import './NavBar.css'
@@ -14,8 +16,6 @@ export default class NavBar extends Component {
   static contextType = ApiContext
 
   componentDidMount() {
-    console.log('loggedIn:', this.state.loggedIn)
-    console.log('has auth token:', TokenService.hasAuthToken())
     if(this.context.authToken || TokenService.hasAuthToken()) {
       this.setState({
         loggedIn: true
@@ -69,9 +69,8 @@ export default class NavBar extends Component {
         <nav className='NavBar'>
           <div className='NavBar-logo'>
             <Link to='/' className='NavBar-link'>
+              <FontAwesomeIcon icon={faCompass} className='NavBar-icon'/>
               {' '}
-              <i className="fa far fa-compass"></i>
-
               TT
             </Link>
           </div>

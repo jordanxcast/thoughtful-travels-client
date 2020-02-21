@@ -20,6 +20,16 @@
 .add-dest-button-group > button{
   margin: 30px 20px 0 20px;
   padding: 5px 10px;
-  border: 1px solid black;
+  border: 1px solid #131B23;
   border-radius: 20px;
+}
+
+.cancel-add-dest-button:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.add-dest-button:hover {
+  cursor: pointer;
+  color: #A8BCA1;
 }

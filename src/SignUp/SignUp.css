@@ -1,8 +1,10 @@
 .SignUpForm {
   position: relative;
-  top: 150px;
-  border: 1px solid black;
+  top: 100px;
+  border: 2px solid #131B23;
+  border-radius: 20px;
   padding: 30px;
+  margin: 0 10%;
 }
 label {
   margin-right: 20px;
@@ -17,6 +19,8 @@ label {
   font-size: 16px;
   border: 2px solid #627C85;
   border-radius: 20px;
+  margin-top: 30px;
+
 }
 
 .SignUp-submit:hover {

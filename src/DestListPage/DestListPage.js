@@ -1,30 +1,29 @@
 import React, { Component } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import ApiContext from '../ApiContext'
 import './DestListPage.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class DestListPage extends Component {
   static contextType = ApiContext;
 
-  // componentDidMount() {
-  //   this.context.getDestinations()
-  // }
+  componentDidMount() {
+    this.context.getDestinations()
+    if(!this.context.authToken){
+      this.props.history.push('/login')
+  }
+  }
 
   render(){
-    this.context.getDestinations()
     const { destinations } = this.context;
-    if(!this.context.authToken){
-        this.props.history.push('/login')
-    }
     
     return (
       <div className='DestListPage'>
-        <Link to='/add-destination' className='DestList-add-dest'>
-          + Add Destination
-        </Link>
+        <h1 className='DestList-header'>My Destinations</h1>
+        
         <ul className='DestListPage_List'>
           {destinations.map(dest => 
-            <li key={dest.dest_id}>
+            <li key={dest.dest_id} className='DestList-item'>
               <NavLink      
                 className='DestLink'
                 to={`/destinations/${dest.dest_id}`}
@@ -32,12 +31,24 @@ class DestListPage extends Component {
                 {dest.dest_title}
               </NavLink>
               <div className='DestDetails_Container'>
-                <div className='DestDetails_Date'>Date: {dest.goal_date}</div>
-                <div className='DestDetails_Budget'>Budget: {dest.budget}</div>
+                <div className='DestDetails_Date'>
+                  Date: {dest.goal_date}
+                  {/* {new Intl.DateTimeFormat("en-GB", {
+                    year: "numeric",
+                    month: "long",
+                    day: "2-digit"
+                  }).format(dest.goal_date)} */}
+                </div>
+                <div className='DestDetails_Budget'>
+                  Budget: ${dest.budget}
+                </div>
               </div>
             </li>
           )}
         </ul>
+        <NavLink to='/add-destination' className='DestList-add-dest'>
+          <FontAwesomeIcon icon='plus-circle'/> Destination
+        </NavLink>
       </div>
     );
   }

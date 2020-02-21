@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Item /> renders UI as expected 1`] = `
+<div
+  className="Item"
+>
+  <button
+    className="Item-delete"
+    onClick={[Function]}
+    type="button"
+  />
+  <div
+    className="Item-content"
+  />
+</div>
+`;

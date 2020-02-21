@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ApiContext from '../ApiContext'
 import config from '../config'
 import './Item.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Item extends Component {
   static contextType = ApiContext;
@@ -33,7 +34,9 @@ class Item extends Component {
     const { id, content } = this.props
     return (
       <div className='Item' id={id}>
-        <button type='button' className='Item-delete' onClick={this.handleClickItemDelete}>X</button>
+        <button type='button' className='Item-delete' onClick={this.handleClickItemDelete}>
+          <FontAwesomeIcon icon='times' />
+        </button>
         <div className='Item-content'>
           {content}
         </div>

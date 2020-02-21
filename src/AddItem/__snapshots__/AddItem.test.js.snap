@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddItem /> renders UI as expected 1`] = `
+<div
+  className="AddItem"
+>
+  <form
+    className="AddItem-form"
+    onSubmit={[Function]}
+  >
+    <h2>
+      Add a Bucketlist Item
+    </h2>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="Item-content"
+      >
+        Item:
+      </label>
+      <input
+        className="item-content"
+        id="item-content"
+        name="itemContent"
+        type="text"
+      />
+    </div>
+    <div
+      className="add-item-button-group"
+    >
+      <button
+        className="cancel-add-item-button"
+        onClick={[Function]}
+        type="reset"
+      >
+        Cancel
+      </button>
+      <button
+        className="add-item-button"
+        disabled={null}
+        type="submit"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>
+`;

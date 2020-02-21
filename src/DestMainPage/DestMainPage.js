@@ -6,6 +6,7 @@ import Item from '../Item/Item'
 import Entry from '../Entry/Entry'
 import TokenService from '../services/token-service'
 import './DestMainPage.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class DestMainPage extends Component {
   static contextType = ApiContext;
@@ -44,11 +45,9 @@ class DestMainPage extends Component {
       return res.json()
     })
     .then((dest) => {
-      console.log(dest)
       this.setState({
         currentDest : dest
       })
-      console.log('current dest:', dest)
     })
     .catch(err => {
       console.error({ err })
@@ -72,7 +71,7 @@ class DestMainPage extends Component {
 
   validateDestBudget(value) {
     if(value === '') {
-      return 0
+      return null
     } return value
   }
 
@@ -83,9 +82,8 @@ class DestMainPage extends Component {
     const authToken = TokenService.getAuthToken()
 
     const destTitle = this.validateDestTitle(e.target.destName.value)
-    console.log('new dest title:', destTitle)
-    const destDate = this.validateDestBudget(e.target.destDate.value)
-    const destBudget = this.validateDestDate(e.target.destBudget.value)
+    const destDate = this.validateDestDate(e.target.destDate.value)
+    const destBudget = this.validateDestBudget(e.target.destBudget.value)
 
 
     fetch(`${config.API_ENDPOINT}/destinations/${destId}`, {
@@ -102,7 +100,6 @@ class DestMainPage extends Component {
         }),
     })
       .then(res => {
-        console.log('res from PATCH request', res)
         if(!res.ok) {
           return res.json()
           .then(e => Promise.reject(e))
@@ -110,7 +107,6 @@ class DestMainPage extends Component {
         return res.json()
       })
       .then(res => {
-        console.log('!res from PATCH request!', res)
         this.context.editDest(res)
       })
       .catch(err => console.error(err.message))
@@ -144,37 +140,39 @@ class DestMainPage extends Component {
   render() {
     const { items, entries } = this.context;
     const destId = this.props.match.params.destId
-    // const destination = destinations.find((d) => { return d.dest_id = destId})
-    // console.log('dest found:',destination)
 
     return (
       <div className='DestMainPage'>
-        <button
-              type='button'
-              className='DestMainPage-back'
-              onClick={() => this.props.history.push(`/destinations`)}
+        <div className='DestMainPage-buttons'>
+          <button
+            type='button'
+            className='DestMainPage-back'
+            onClick={() => this.props.history.push(`/destinations`)}
             >
-              Go Back
-            </button>
+            <FontAwesomeIcon icon='arrow-left'/>
+          </button> 
+          <button className='Dest-delete' type='button' onClick={this.handleClickDelete}>
+            <FontAwesomeIcon icon='trash' className='delete-dest'/>
+          </button>
+          </div>
         <section className='DestMainPage-overview'>
           <form onSubmit={(e) => this.handleClickEdit(e)}>
-          <div>
-            <input className='dest-name' id='dest-name' name='destName' type='text' required defaultValue={this.state.currentDest.dest_title} /> 
-          </div>
-          <div>
-            <input className='dest-date' id='dest-date' name='destDate' type='date' defaultValue={this.state.currentDest.goal_date} />  
-          </div>
-          <div>
-            <input className='dest-budget' id='dest-budget' name='destBudget' type='number' defaultValue={this.state.currentDest.budget} /> 
-          </div>
-          
-          <button className='Dest-completed' type='submit' > Save </button>
+            <div className='DestMain-name'>
+              <input className='dest-name' id='dest-name' name='destName' type='text' required defaultValue={this.state.currentDest.dest_title} /> 
+            </div>
+            <div className='DestMain-details'>
+              <div className='DestMain-date'>
+                <input className='dest-date' id='dest-date' name='destDate' type='date' defaultValue={this.state.currentDest.goal_date} />  
+              </div>
+              <div className='DestMain-budget'>
+                <input className='dest-budget' id='dest-budget' name='destBudget' type='number' defaultValue={this.state.currentDest.budget} /> 
+              </div>
+            </div>
+            
+            <button className='Dest-save-edits' type='submit' > Save </button>
           </form>
           
-          <div className='DestMainPage-buttons'>
-            {/* <button className='Dest-edit' type='button'>Edit</button> */}
-            <button className='Dest-delete' type='button' onClick={this.handleClickDelete}>Delete</button>
-          </div>
+          
         </section>
         <section className='DestMainPage-items'>
         <h2 className='Entry-header'>My Bucket-List Items</h2>
@@ -187,15 +185,15 @@ class DestMainPage extends Component {
           })}
           <button type='button' className='DestMainPage-add'>
             <Link to={`/${destId}/add-item`} className='button-link'>
-              + Add Item
+              <FontAwesomeIcon icon='plus-circle' /> Item
             </Link>
-        </button>
+          </button>
         </section>
         <section className='DestMainPage-entries'>
           <h2 className='Entry-header'>My Entries</h2>
           <button type='button' className='DestMainPage-add'>
             <Link to={`/${destId}/add-entry`} className='button-link'> 
-              + Journal Entry 
+              <FontAwesomeIcon icon='plus-circle' />  Journal Entry 
             </Link>
           </button>
 

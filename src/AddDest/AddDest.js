@@ -116,7 +116,7 @@ class AddDest extends Component {
           <div className='add-dest-button-group'>
             <button
               type='reset'
-              className='add-dest-button'
+              className='cancel-add-dest-button'
               onClick={() => this.props.history.push('/destinations')}
             >
               Cancel

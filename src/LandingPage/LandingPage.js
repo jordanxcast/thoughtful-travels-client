@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './LandingPage.css'
 
 
 export default class LandingPage extends Component {
-
 
 render() {
 
@@ -12,7 +12,7 @@ render() {
     <main>
       <header className='LP-header'>
         <h1>
-          Thoughtful Travels
+          Thoughtful Travels <FontAwesomeIcon icon='compass'/>
         </h1>
         <h2>
           Your Journey, Your Experience
@@ -40,7 +40,7 @@ render() {
         <p>[<em>placeholder for screenshot Thoughtful Travels interface</em>]</p>
         <p>Accomplishing a goal is a great feeling, and gaining a new experience through travelling is invaluable. Reflect on the travel goals you complete with a journal entry, documenting the moments you never want to forget.</p>
       </section>
-      <section className='SignUp'>
+      <section className='LP-signUp'>
         <h3>Begin your Thoughtful Travels Now</h3>
         <Link
         className='LP-link'
@@ -48,7 +48,7 @@ render() {
           Sign-up
         </Link>
       </section>
-      <section className='Login'>
+      <section className='LP-ogin'>
         <h4>Already have an account?</h4>
         <Link
           className='LP-link'

@@ -92,7 +92,6 @@ class App extends Component {
   }
 
   handleDeleteItem = (itemId) => {
-    console.log('items in state at delete:', this.state.items)
     this.setState({
       items: this.state.items.filter(item => item.item_id !== itemId)
     })

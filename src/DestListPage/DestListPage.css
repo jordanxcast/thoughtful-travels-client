@@ -1,25 +1,73 @@
 .DestListPage {
   position: relative;
-  top: 100px;
-  border: 1px solid black;
-  padding: 30px;
+  top: 40px;
+  padding: 50px 0 30px 0;
+  background-color: #E9EBF8;
+  height: 100vh;
+
+}
+
+.DestListPage_List{
+  margin: 40px 0;
+}
+
+.DestList-header{
+  font-size: 45px;
+  color: #416165;
+  /* text shadow: ; */
 }
 
 .DestList-add-dest {
   text-decoration: none;
-  border: 1px solid black;
-  position: absolute;
-  left: 20px;
+  border: 1px solid #131B23;
+  margin: 30px 20px;
   padding: 10px;
   border-radius: 20px;
+  font-size: 14px;
+  color: #131B23;
+}
+
+.DestList-add-dest:hover{
+  color: #416165;
+  border-color: #416165;
 }
 
 .DestLink {
   text-decoration: none;
-  color: black;
-  font-size: 18px;
+  color: #FAE3E3;
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+.DestList-item {
+  padding: 30px;
+  box-shadow: 0px 6px 5px 0px rgba(19, 27, 35, .75);
+  background-color: #131B23;
+  opacity: .75;
+  color: #FAE3E3;
+}
+
+li:hover{
+  box-shadow: 0px 6px 5px 0px rgba(65, 97, 101, .75);
+  border-top: #416165;
+  cursor: pointer;
+  width: 90%;
+
 }
 
 li {
   list-style: none;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+
+}
+
+
+
+.DestDetails_Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
 }

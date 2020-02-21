@@ -3,10 +3,34 @@
   top: 100px;
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-items: center;
+}
+
+.form-group > input {
+  width: 50%;
+  align-self: center;
+  margin: 10px 0 20px 0;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-group > textarea {
+  width: 50%;
+  height: 200px;
+  align-self: center;
+  padding: 10px;
+  font-size: 16px;
+  margin: 10px 0 20px 0;
+}
+
 .add-entry-button-group > button{
   margin: 30px 20px 0 20px;
   padding: 5px 10px;
-  border: 1px solid black;
+  border: 1px solid #131B23;
   border-radius: 20px;
 }
 

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddEntry /> renders UI as expected 1`] = `
+<div
+  className="AddEntry"
+>
+  <form
+    className="AddEntry-form"
+    onSubmit={[Function]}
+  >
+    <h2>
+      Add a Journal Entry
+    </h2>
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="entry-subject"
+      >
+        Subject:
+      </label>
+      <input
+        className="entry-subject"
+        id="entry-subject"
+        name="entrySubject"
+        type="text"
+      />
+      <label
+        htmlFor="entry-body"
+      >
+        Journal Entry:
+      </label>
+      <textarea
+        className="entry-body"
+        cols="10"
+        id="entry-body"
+        name="entryBody"
+        rows="10"
+        type="textarea"
+      />
+    </div>
+    <div
+      className="add-entry-button-group"
+    >
+      <button
+        className="cancel-add-entry-button"
+        onClick={[Function]}
+        type="reset"
+      >
+        Cancel
+      </button>
+      <button
+        className="add-entry-button"
+        disabled={null}
+        type="submit"
+      >
+        Save Journal Entry
+      </button>
+    </div>
+  </form>
+</div>
+`;

@@ -93,7 +93,7 @@ class AddEntry extends Component {
             <input className='entry-subject' id='entry-subject' name='entrySubject' type='text'/>
             {/* {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)} */}
             <label htmlFor='entry-body'>Journal Entry:</label>
-            <input className='entry-body' id='entry-body' name='entryBody' type='text'/>
+            <textarea className='entry-body' id='entry-body' name='entryBody' type='textarea' cols='10' rows='10'/>
           </div>
 
           <div className='add-entry-button-group'>

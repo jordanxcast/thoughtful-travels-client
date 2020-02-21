@@ -30,7 +30,6 @@ handleSubmitJwtAuth = e => {
     password: password.value,
   })
     .then(res => {
-      console.log(res)
       user_name.value = ''
       password.value = ''
       TokenService.saveAuthToken(res.authToken)
@@ -73,7 +72,6 @@ render() {
       <button type='submit' className='Login-submit'>
         Login
       </button>
-
     </form>
   )
 }

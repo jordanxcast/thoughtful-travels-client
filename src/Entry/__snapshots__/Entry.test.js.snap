@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Entry /> renders UI as expected 1`] = `
+<div
+  className="Entry"
+>
+  <div
+    className="Entry-info-top"
+  >
+    <div
+      className="Entry-subject"
+    />
+    <div
+      className="Entry-date"
+    >
+      Created on:
+      <div
+        className="Date"
+      />
+    </div>
+  </div>
+  <div
+    className="Entry-body-delete"
+  >
+    <div
+      className="Entry-body"
+    />
+    <button
+      className="Entry-delete"
+      onClick={[Function]}
+      type="button"
+    >
+      Delete this entry
+    </button>
+  </div>
+</div>
+`;

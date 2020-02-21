@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid #131B23;
   padding: 20px;
   justify-content: space-between;
   background-color: #131B23;
@@ -23,7 +23,7 @@
 }
 
 .NavBar-link:hover {
-  color: #656176;
+  color: #808F85;
 }
 
 .NavBar_not-logged-in > .NavBar-link {
