@@ -14,6 +14,8 @@ https://jc-t-travels.now.sh/
 ## Screenshots: 
 Coming soon!
 
+
+##
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
