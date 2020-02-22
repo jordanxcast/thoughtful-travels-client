@@ -15,3 +15,6 @@ https://jc-t-travels.now.sh/
 
 ## Screenshots: 
 Coming soon!
+![](images/destination-view.png)
+![](images/entries-view.png)
+![](images/items-view.png)
