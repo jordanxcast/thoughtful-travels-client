@@ -1,60 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SignUp /> renders UI as expected 1`] = `
-<form
-  className="SignUpForm"
-  onSubmit={[Function]}
+<div
+  className="SignUp"
 >
-  <div
-    className="full_name"
+  <form
+    className="SignUpForm"
+    onSubmit={[Function]}
   >
-    <label
-      htmlFor="SignUpForm__full_name"
+    <h1>
+      Create your Thoughtful Tavels Account
+    </h1>
+    <div
+      className="full_name"
     >
-      Full Name
-    </label>
-    <input
-      id="SignUpForm__full_name"
-      name="full_name"
-      required={true}
-      type="text"
-    />
-  </div>
-  <div
-    className="user_name"
-  >
-    <label
-      htmlFor="SignUpForm__user_name"
+      <label
+        htmlFor="SignUpForm__full_name"
+      >
+        *Full Name
+      </label>
+      <input
+        id="SignUpForm__full_name"
+        name="full_name"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="user_name"
     >
-      Username
-    </label>
-    <input
-      id="SignUpForm__user_name"
-      name="user_name"
-      required={true}
-      type="text"
-    />
-  </div>
-  <div
-    className="password"
-  >
-    <label
-      htmlFor="SignUpForm__password"
+      <label
+        htmlFor="SignUpForm__user_name"
+      >
+        *Username
+      </label>
+      <input
+        id="SignUpForm__user_name"
+        name="user_name"
+        required={true}
+        type="text"
+      />
+    </div>
+    <div
+      className="password"
     >
-      Password
-    </label>
-    <input
-      id="SignUpForm__password"
-      name="password"
-      required={true}
-      type="password"
-    />
-  </div>
-  <button
-    className="SignUp-submit"
-    type="submit"
-  >
-    Sign Up
-  </button>
-</form>
+      <label
+        htmlFor="SignUpForm__password"
+      >
+        *Password
+      </label>
+      <input
+        id="SignUpForm__password"
+        name="password"
+        required={true}
+        type="password"
+      />
+    </div>
+    <button
+      className="SignUp-submit"
+      type="submit"
+    >
+      Sign Up
+    </button>
+  </form>
+</div>
 `;

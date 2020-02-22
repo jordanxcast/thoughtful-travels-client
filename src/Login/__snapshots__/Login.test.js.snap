@@ -1,42 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Login /> renders UI as expected 1`] = `
-<form
-  className="Login"
-  onSubmit={[Function]}
+<div
+  className="Login-container"
 >
-  <div
-    className="user_name"
+  <form
+    className="Login"
+    onSubmit={[Function]}
   >
-    <label
-      htmlFor="Login-user-name"
+    <h1>
+      Login to Begin your Journey
+    </h1>
+    <div
+      className="user_name"
     >
-      User name
-    </label>
-    <input
-      id="Login-user-name"
-      name="user_name"
-    />
-  </div>
-  <div
-    className="password"
-  >
-    <label
-      htmlFor="Login-password"
+      <label
+        htmlFor="Login-user-name"
+      >
+        *User name
+      </label>
+      <input
+        id="Login-user-name"
+        name="user_name"
+      />
+    </div>
+    <div
+      className="password"
     >
-      Password
-    </label>
-    <input
-      id="Login-password"
-      name="password"
-      type="password"
-    />
-  </div>
-  <button
-    className="Login-submit"
-    type="submit"
-  >
-    Login
-  </button>
-</form>
+      <label
+        htmlFor="Login-password"
+      >
+        *Password
+      </label>
+      <input
+        id="Login-password"
+        name="password"
+        type="password"
+      />
+    </div>
+    <button
+      className="Login-submit"
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</div>
 `;

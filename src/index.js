@@ -5,7 +5,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faArrowLeft, faTrash, faTimes, faPlusCircle, faCompass, faDollarSign } from '@fortawesome/free-solid-svg-icons'
 import App from './App/App';
 import { BrowserRouter } from 'react-router-dom';
-import { ApiContextProvider } from '../src/ApiContext'
+import { ApiContextProvider } from './ApiContext'
 import './index.css';
 
 library.add( faArrowLeft, faTrash, faTimes, faPlusCircle, faCompass, faDollarSign)

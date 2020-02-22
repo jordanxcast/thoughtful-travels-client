@@ -12,7 +12,7 @@ exports[`<AddItem /> renders UI as expected 1`] = `
       Add a Bucketlist Item
     </h2>
     <div
-      className="form-group"
+      className="AddItem-form-group"
     >
       <label
         htmlFor="Item-content"

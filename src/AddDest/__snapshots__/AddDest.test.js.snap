@@ -2,83 +2,87 @@
 
 exports[`<AddDest /> renders UI as expected 1`] = `
 <div
-  className="AddDest"
+  className="AddDest-container"
 >
-  <form
-    className="AddDest-form"
-    onSubmit={[Function]}
+  <div
+    className="AddDest"
   >
-    <h2>
-      Add Your Next Destination
-    </h2>
-    <div
-      className="form-group"
+    <form
+      className="AddDest-form"
+      onSubmit={[Function]}
     >
+      <h2>
+        Add Your Next Destination
+      </h2>
       <div
-        className="AddDest-title"
+        className="AddDest-form-group"
       >
-        <label
-          htmlFor="dest-name"
+        <div
+          className="AddDest-title"
         >
-          * Destination Title:
-        </label>
-        <input
-          className="dest-name"
-          id="dest-name"
-          name="destName"
-          required={true}
-          type="text"
-        />
+          <label
+            htmlFor="dest-name"
+          >
+            * Destination Title:
+          </label>
+          <input
+            className="dest-name"
+            id="dest-name"
+            name="destName"
+            required={true}
+            type="text"
+          />
+        </div>
+        <div
+          className="AddDest-date"
+        >
+          <label
+            htmlFor="dest-date"
+          >
+            Goal Date:
+          </label>
+          <input
+            className="dest-date"
+            id="dest-date"
+            name="destDate"
+            type="date"
+          />
+        </div>
+        <div
+          className="AddDest-budget"
+        >
+          <label
+            htmlFor="dest-budget"
+          >
+            Budget ($):
+          </label>
+          <input
+            className="dest-budget"
+            id="dest-budget"
+            name="destBudget"
+            type="number"
+          />
+        </div>
       </div>
       <div
-        className="AddDest-date"
+        className="add-dest-button-group"
       >
-        <label
-          htmlFor="dest-date"
+        <button
+          className="cancel-add-dest-button"
+          onClick={[Function]}
+          type="reset"
         >
-          Goal Date:
-        </label>
-        <input
-          className="dest-date"
-          id="dest-date"
-          name="destDate"
-          type="date"
-        />
-      </div>
-      <div
-        className="AddDest-budget"
-      >
-        <label
-          htmlFor="dest-budget"
+          Cancel
+        </button>
+        <button
+          className="add-dest-button"
+          disabled={null}
+          type="submit"
         >
-          Budget:
-        </label>
-        <input
-          className="dest-budget"
-          id="dest-budget"
-          name="destBudget"
-          type="number"
-        />
+          Save Destination
+        </button>
       </div>
-    </div>
-    <div
-      className="add-dest-button-group"
-    >
-      <button
-        className="cancel-add-dest-button"
-        onClick={[Function]}
-        type="reset"
-      >
-        Cancel
-      </button>
-      <button
-        className="add-dest-button"
-        disabled={null}
-        type="submit"
-      >
-        Save Destination
-      </button>
-    </div>
-  </form>
+    </form>
+  </div>
 </div>
 `;

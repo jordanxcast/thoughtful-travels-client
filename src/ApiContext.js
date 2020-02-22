@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import config from './config'
 
 // export default React.createContext({
-const ApiContext = React.createContext({
+ const ApiContext = React.createContext({
     destinations : [],
     items: [],
     entries: [],
@@ -18,8 +18,7 @@ const ApiContext = React.createContext({
     addItem: () => {},
     addEntry: () => {},
     editDest: () => {},
-})
-
+});
 export default ApiContext;
 
 export class ApiContextProvider extends Component {
@@ -32,7 +31,7 @@ export class ApiContextProvider extends Component {
 
   authTokenState = authToken => {
     this.setState({ authToken })
-  }
+  };
 
   handleGetDestinations = () => {
     fetch(`${config.API_ENDPOINT}/destinations`, {
@@ -55,7 +54,7 @@ export class ApiContextProvider extends Component {
     .catch(err => {
       console.error({err});
     });
-  }
+  };
 
 
   handleGetItems = destId => {
@@ -78,7 +77,7 @@ export class ApiContextProvider extends Component {
     .catch(err =>  {
       console.error({err})
     })
-  }
+  };
 
   handleGetEntries = destId => {
     //get request to fetch journal entries for the destination
@@ -101,26 +100,25 @@ export class ApiContextProvider extends Component {
     .catch(err =>  {
       console.error({err})
     })
-  }
-
+  };
 
   handleDeleteDest = destId => {
     this.setState({
       destinations: this.state.destinations.filter(d => d.dest_id !== destId)
     })
-  }
+  };
 
   handleDeleteItem = (itemId) => {
     this.setState({
       items: this.state.items.filter(item => item.item_id !== itemId)
     })
-  }
+  };
 
   handleDeleteEntry = entryId => {
     this.setState({
       entries: this.state.entries.filter( entry => entry.id !== entryId)
     })
-  }
+  };
 
   handleAddDest = (newDest) => {
     return this.setState({
@@ -130,7 +128,7 @@ export class ApiContextProvider extends Component {
       newDest
       ]
     })
-  }
+  };
 
   handleAddItem = (newItem) => {
     this.setState({
@@ -140,13 +138,13 @@ export class ApiContextProvider extends Component {
         newItem
       ]
     })
-  }
+  };
 
   handleAddEntry = (newEntry) => {
     this.setState({
       entries: [...this.state.entries, newEntry]
     })
-  }
+  };
 
   handleEditDest = updateDest => {
     const newDestinations = this.state.destinations.map(dest => 
@@ -157,7 +155,7 @@ export class ApiContextProvider extends Component {
     this.setState({
       destinations: newDestinations
     })
- }  
+ };
 
   render() {
     const value = {

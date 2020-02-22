@@ -45,7 +45,6 @@ class DestMainPage extends Component {
       return res.json()
     })
     .then((dest) => {
-      console.log(dest.goal_date)
       this.setState({
         currentDest : dest
       })
@@ -208,8 +207,6 @@ class DestMainPage extends Component {
               subject={entry.subject}
               body={entry.body}
               created={entry.date_created ? new Date(entry.date_created).toDateString() : entry.date_created}
-              // {entry.date_created}
-              
             />
           })}
         </section>

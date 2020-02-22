@@ -12,7 +12,7 @@ exports[`<AddEntry /> renders UI as expected 1`] = `
       Add a Journal Entry
     </h2>
     <div
-      className="form-group"
+      className="AddEntry-form-group"
     >
       <label
         htmlFor="entry-subject"

@@ -30,7 +30,7 @@ exports[`<Entry /> renders UI as expected 1`] = `
       onClick={[Function]}
       type="button"
     >
-      Delete this entry
+       this entry
     </button>
   </div>
 </div>
