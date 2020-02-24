@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import ApiContext from '../ApiContext'
+import ApiContext from '../../ApiContext'
 import './DestListPage.css'
-import TokenService from '../services/token-service'
+import TokenService from '../../services/token-service'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class DestListPage extends Component {

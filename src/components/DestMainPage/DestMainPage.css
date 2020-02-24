@@ -10,9 +10,9 @@
   top: 20px;
   margin: 0 20px 40px 20px;
   padding: 5px 10px;
-  border: 1px solid #131B23;
+  /* border: 1px solid #131B23; */
   border-radius: 20px;
-  opacity: 100%;
+  background-color: #46494C;
 }
 
 .DestMainPage-back{
@@ -25,12 +25,34 @@
   border-color: #A8BCA1;
 }
 
+.dest-back {
+  color: #9F9AA4;
+  border-color: #9F9AA4;
+}
+
+.dest-back:hover {
+  color: #A8BCA1;
+  border-color: #A8BCA1;
+}
+
 .Dest-delete{
   right: 10px;
+  color: #131B23;
+  border-color: #9F9AA4;
 }
 
 .Dest-delete:hover{
   cursor: pointer;
+  color: red;
+  border-color: red;
+}
+
+.dest-delete {
+  color: #131B23;
+  border-color: #9F9AA4;
+}
+
+.dest-delete:hover {
   color: red;
   border-color: red;
 }
