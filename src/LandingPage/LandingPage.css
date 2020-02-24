@@ -3,7 +3,7 @@ main {
 }
 
 .LP-sections > section {
-  padding: 30px 60px;
+  padding: 30px 90px;
   margin: 0;
 }
 
@@ -31,6 +31,10 @@ main {
   font-size: 20px;
 }
 
+.LP-image {
+  width: 50%;
+}
+
 .LP-sections{
   position: relative;
   top: 90px;
@@ -39,7 +43,21 @@ main {
 
 .LP-link {
   text-decoration: none;
-  color: #131B23;
+  font-size: 16px;
+  color: #F2F7F2;
+}
+
+.LP-link-button {
+  border: 1px solid #131B23;
+  border-radius: 30px;
+  padding: 10px;
+  background-color: #131B23;
+  color: #F2F7F2;
+}
+
+.LP-link-button:hover{
+  color:  #808F85;
+  border: 2px solid #808F85;
 }
 
 .LP-link:hover {

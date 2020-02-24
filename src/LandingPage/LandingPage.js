@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import DestView from '../Images/laptop-dest-list-view.png'
+import DestMain from '../Images/laptop-dest-main-view.png'
+import EntriesView from '../Images/laptop-entries-view.png'
 import './LandingPage.css'
 
 
@@ -23,38 +26,38 @@ render() {
         <header>
           <h3>Make your travel goals come true</h3>
         </header>
-        <p>[<em>placeholder for screenshot Thoughtful Travels interface</em>]</p>
+        <img src={DestView} alt='destination list page view' className='LP-image'/>
         <p>Thoughtful Travels is a place to set your traveling goals, plan your trips and document your experiences. </p>
       </section>
       <section>
         <header>
           <h3>Set your Travel Goals</h3>
         </header>
-        <p>[<em>placeholder for screenshot Thoughtful Travels interface</em>]</p>
+        <img src={DestMain} alt='destination main page view' className='LP-image'/>
         <p>The first start to making your goals happen is setting them. Set your goals and start planning your travels with all the bucket-list items your trip can consist of. </p>
       </section>
       <section>
         <header>
           <h3>Reflect on Your Experience</h3>
         </header>
-        <p>[<em>placeholder for screenshot Thoughtful Travels interface</em>]</p>
+        <img src={EntriesView} alt='destination entries view' className='LP-image'/>
         <p>Accomplishing a goal is a great feeling, and gaining a new experience through travelling is invaluable. Reflect on the travel goals you complete with a journal entry, documenting the moments you never want to forget.</p>
       </section>
       <section className='LP-signUp'>
         <h3>Begin your Thoughtful Travels Now</h3>
-        <Link
+        <button className='LP-link-button'><Link
         className='LP-link'
           to='/sign-up'>
           Sign-up
-        </Link>
+        </Link></button>
       </section>
       <section className='LP-ogin'>
         <h4>Already have an account?</h4>
-        <Link
+        <button className='LP-link-button'><Link
           className='LP-link'
           to='/login'>
           Login
-        </Link>
+        </Link></button>
       </section>
       </div>
     </main>

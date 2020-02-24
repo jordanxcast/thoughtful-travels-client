@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import ApiContext from '../ApiContext'
-import config from '../config'
-import Item from '../Item/Item'
-import Entry from '../Entry/Entry'
-import TokenService from '../services/token-service'
+import ApiContext from '../../ApiContext'
+import config from '../../config'
+import Item from '../../Item/Item'
+import Entry from '../../Entry/Entry'
+import TokenService from '../../services/token-service'
 import './DestMainPage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -149,7 +149,9 @@ class DestMainPage extends Component {
             className='DestMainPage-back'
             onClick={() => this.props.history.push(`/destinations`)}
             >
-            <FontAwesomeIcon icon='arrow-left'/>
+            <FontAwesomeIcon
+            className='dest-back' icon='arrow-left'
+            />
           </button> 
           <button className='Dest-delete' type='button' onClick={this.handleClickDelete}>
             <FontAwesomeIcon icon='trash' className='delete-dest'/>
