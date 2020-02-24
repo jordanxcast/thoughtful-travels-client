@@ -11,7 +11,7 @@ password: Jd#1234
 Have fun playing around on Thoughtful Travels! 
 
 ## Deployed App: 
-https://thoughtful-travels-274fgkv3d.now.sh/
+https://thoughtful-travels-8vqy0gjv1.now.sh/
 https://jc-t-travels.now.sh/
 
 ## Tech Stack:
