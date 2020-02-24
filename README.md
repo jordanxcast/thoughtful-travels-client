@@ -3,6 +3,13 @@ Thoughtful Travels is a web application for users to set destination travels goa
 
 Thoughtful Travels aims to empower it’s users by giving them a place to organize their travel goals, set specific details on their goals and reflect on their experiences so the invaluable memories from their travels are documented.
 
+## Login 
+You can create your own account or login using: 
+username: john-doe
+password: Jd#1234
+
+Have fun playing around on Thoughtful Travels! 
+
 ## Deployed App: 
 https://thoughtful-travels-274fgkv3d.now.sh/
 https://jc-t-travels.now.sh/
@@ -14,8 +21,11 @@ https://jc-t-travels.now.sh/
 - Express
 - Knex
 
+## Server side: 
+Repo: https://github.com/jordanxcast/thoughtful-travels-server
+
 ## Screenshots: 
-![](images/top-dest-list-view.png)
-![](images/top-dest-main-view.png)
-![](images/top-entries-view.png)
+![](src/Images/laptop-dest-list-view.png)
+![](src/Images/laptop-dest-main-view.png)
+![](src/Images/laptop-entries-view.png)
 ![](images/items-view.png)
