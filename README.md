@@ -15,7 +15,7 @@ https://jc-t-travels.now.sh/
 - Knex
 
 ## Screenshots: 
-![](images/destination-list-view.png)
-![](images/destination-view.png)
-![](images/entries-view.png)
+![](images/top-dest-list-view.png)
+![](images/top-dest-main-view.png)
+![](images/top-entries-view.png)
 ![](images/items-view.png)
