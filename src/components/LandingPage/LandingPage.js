@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import DestView from '../Images/laptop-dest-list-view.png'
-import DestMain from '../Images/laptop-dest-main-view.png'
-import EntriesView from '../Images/laptop-entries-view.png'
+import DestView from '../../Images/laptop-dest-list-view.png'
+import DestMain from '../../Images/laptop-dest-main-view.png'
+import EntriesView from '../../Images/laptop-entries-view.png'
 import './LandingPage.css'
 
 
@@ -41,7 +41,7 @@ render() {
           <h3>Reflect on Your Experience</h3>
         </header>
         <img src={EntriesView} alt='destination entries view' className='LP-image'/>
-        <p>Accomplishing a goal is a great feeling, and gaining a new experience through travelling is invaluable. Reflect on the travel goals you complete with a journal entry, documenting the moments you never want to forget.</p>
+        <p>Accomplishing a goal is a great feeling, and gaining a new experience through traveling is invaluable. Reflect on the travel goals you complete with a journal entry, documenting the moments you never want to forget.</p>
       </section>
       <section className='LP-signUp'>
         <h3>Begin your Thoughtful Travels Now</h3>

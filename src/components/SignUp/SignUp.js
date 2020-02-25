@@ -1,35 +1,55 @@
 import React, { Component } from 'react'
-import AuthApiService from '../services/auth-api-services'
+import TokenService from '../../services/token-service'
+import AuthApiService from '../../services/auth-api-services'
+import ApiContext from '../../ApiContext'
 import './SignUp.css'
 
 export default class SignUpForm extends Component {
-  static defaultProps = {
-    history: {
-      push: () => {},
-    },
+static contextType = ApiContext
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      error: null,
+      username: '',
+      password: '',
+    }
   }
 
-  state = { error: null }
-
   handleSignUpSuccess = user => {
-    const { history } = this.props
-    history.push('/login')
+    AuthApiService.fetchAccount({username: this.state.username, password: this.state.password})
+    .then( res => {
+      TokenService.saveAuthToken(res.authToken)
+      this.context.handleAuthToken(res.authToken)
+    })
+    .then(res => {
+      console.log(this.context.authToken, 'authToken in context')
+      this.props.history.push('/destinations')
+    })
   }
 
   handleSubmit = ev => {
     ev.preventDefault()
     const { full_name, user_name, password } = ev.target
-
-    this.setState({ error: null })
+    this.setState({
+      username: user_name.value,
+      password: password.value,
+    })
     AuthApiService.postUser({
       username: user_name.value,
       password: password.value,
       fullname: full_name.value,
     })
-      .then( user => {
-        user_name.value = ''
-        password.value = ''
-        full_name.value = ''
+      .then(user => {
+        console.log(user, '!!!!')
+        this.setState({
+          username: user_name.value,
+          password: password.value,
+          authToken: null,
+        })
+      })
+      .then(user => {
+        this.handleSignUpSuccess()
       })
       .catch(res => {
         this.setState({error: res.error})
@@ -37,7 +57,6 @@ export default class SignUpForm extends Component {
   }
 
   render() {
-    // const { error } = this.state
     return (
       <div className='SignUp'>
         <form

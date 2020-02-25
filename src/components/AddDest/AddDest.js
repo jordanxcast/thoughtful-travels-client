@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import ApiContext from '../ApiContext'
-import config from '../config'
-import TokenService from '../services/token-service'
+import ApiContext from '../../ApiContext'
+import config from '../../config'
+import TokenService from '../../services/token-service'
 import './AddDest.css'
 
 class AddDest extends Component {

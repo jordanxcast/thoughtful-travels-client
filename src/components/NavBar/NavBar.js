@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCompass} from '@fortawesome/free-solid-svg-icons'
-import TokenService from '../services/token-service'
-import ApiContext from '../ApiContext'
+import TokenService from '../../services/token-service'
+import ApiContext from '../../ApiContext'
 import './NavBar.css'
 
 export default class NavBar extends Component {

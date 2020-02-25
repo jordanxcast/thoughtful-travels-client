@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 // import { format } from 'date-fns'
-import ApiContext from '../ApiContext'
+import ApiContext from '../../ApiContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import config from '../config'
+import config from '../../config'
 import './Entry.css'
 
 class Entry extends Component {
