@@ -18,17 +18,24 @@
 
 .AddItem-form-group > input {
   height: 40px;
+  margin-top: 10px;
   background-color: #4C5C68;
   color: white;
-  width: 300px;
+  width: 100%;
   border-radius: 20px;
   border: 1px solid white;
   font-size: 18px;
   padding: 10px;
 }
 
+.add-item-button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px 0 0 0;
+}
+
 .add-item-button-group > button{
-  margin: 30px 20px 0 20px;
   padding: 5px 10px;
   border: 1px solid #131B23;
   border-radius: 20px;
@@ -42,4 +49,39 @@
 .cancel-add-item-button:hover{
   cursor: pointer;
   color: red;
+}
+
+@media (min-width: 750px) {
+  .AddItem-form-group {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+  }
+  .AddItem-form-group > label {
+    line-height: 100%;
+    justify-self: center;
+    /* width: 50%; */
+    margin: auto 20px auto 0;
+  }
+
+  .AddItem-form-group > input  {
+    margin-top: 0;
+    width: 50%;
+  }
+
+  .add-item-button-group {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0 0 0;
+    justify-content: center;
+  }
+  
+  .add-item-button-group > button{
+    margin: auto 40px;
+    padding: 5px 10px;
+    border: 1px solid #131B23;
+    border-radius: 20px;
+  }
 }

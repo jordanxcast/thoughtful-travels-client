@@ -60,7 +60,7 @@
 .DestMainPage-overview {
   box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75);
   margin-top: 20px;
-  padding: 50px 10px 30px 10px;
+  padding: 80px 10px 50px 10px;
   background-color: #46494C;
   color: #F2F7F2;
   z-index: 12;
@@ -80,6 +80,8 @@
 }
 
 .Dest-save-edits{
+  margin-top: 20px;
+  margin-bottom: 0;
   padding: 5px 10px;
   border: 1px solid #131B23;
   border-radius: 20px;
@@ -106,43 +108,45 @@
   text-align: center;
   padding: 5px;
   height: 100%;
-  /* margin: 0 20px; */
+  margin: 10px 0;
+  width: 80%;
   justify-content: center;
   background-color:  #F2F7F2;
   color: black;
 }
+.dest-date{
+  text-align: right;
+  padding-right: 10%;
+}
 
-.DestMain-date {
-  margin-right: 5px;
+.DestMain-name {
+  margin-bottom: 0;
 }
 
 .DestMain-budget {
   position: relative;
   display: inline;
   font-size: 20px;
-  margin-left: 5px;
+  /* margin-left: 5px; */
 }
 
 .DestMain-budget:before {
   content: '$';
   position: absolute;
-  top: 8px;
-  left: 50px;
+  top: 25%;
+  left: 20%;
   z-index: 1;
   color: black;
 }
 
 .DestMain-details{
   display: flex;
-  flex-direction: row;
-  margin: 20px 20px;
-  /* padding: 0 20px; */
+  flex-direction: column;
+  /* margin: 20px 20px; */
   justify-content: center;
 }
 
 .DestMainPage-items {
-  /* border-bottom: 1px solid grey; */
-  /* background-color: #B5C9C3; */
   margin: 0;
   padding-bottom: 40px;
   box-shadow: 0px 4px 5px 8px rgba(0,0,0,0.75);
@@ -150,7 +154,6 @@
 
 }
 .DestMainPage-entries{
-  /* background-color: #B5C9C3; */
   margin: 0;
   margin-bottom: 40px;
   border-top: 2px solid black;
@@ -167,4 +170,71 @@
 
 .Entries-header-container {
   background-color: #9F9AA4;
+}
+
+@media (min-width: 430px) {
+  .dest-date{
+    text-align: center;
+    padding-left: 8%;
+    padding-right: 5%;
+  }
+}
+
+@media (min-width: 750px) {
+
+  .DestMain-name {
+    width: 50%;
+    margin: auto;
+  }
+
+  .dest-name {
+    width: fit-content;
+  }
+
+  .DestMain-details {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: 20px auto;
+    justify-content: center;
+
+  }
+
+  .dest-name, 
+  .dest-date,
+  .dest-budget {
+    border: 1px solid #131B23;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    height: 100%;
+    margin: 0 20px;
+    justify-content: center;
+    background-color:  #F2F7F2;
+    color: black;
+  }
+
+  .DestMain-date {
+    margin-right: 5px;
+  }
+
+  
+
+  .DestMain-budget {
+    position: relative;
+    display: inline;
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
+  .DestMain-budget:before {
+    content: '$';
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    z-index: 1;
+    color: black;
+  }
+
 }

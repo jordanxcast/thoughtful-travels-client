@@ -16,7 +16,15 @@
   color: #131B23;
 }
 
+
+.SignUpForm > div {
+  display: flex;
+  flex-direction: column;
+}
+
+
 .SignUpForm > h1 {
+  margin-top: 30px;
   margin-bottom: 50px;
 }
 
@@ -27,9 +35,11 @@
   border: 1px solid black;
   border-radius: 10px;
 }
+
 label {
   margin-right: 20px;
   font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .full_name, .user_name, .password {
@@ -42,11 +52,21 @@ label {
   font-size: 16px;
   border: 2px solid #627C85;
   border-radius: 20px;
-  margin-top: 30px;
+  margin: 30px auto;
 
 }
 
 .SignUp-submit:hover {
   cursor: pointer;
   border-color: #FAE3E3;
+}
+
+@media (min-width: 500px) {
+  .SignUpForm > div {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin: 20px auto;
+    align-self: center;
+  }
 }

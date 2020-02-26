@@ -1,6 +1,7 @@
 .AddDest-container {
   background-color: #4C5C68;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .AddDest {
@@ -29,53 +30,6 @@
 .AddDest-date,
 .AddDest-budget {
   display: flex;
-  flex-direction: row;
-  margin: 0 auto 20px auto;
-  justify-content: center;
-  width: 500px;
-
-}
-
-.AddDest-title > input,
-.AddDest-date > input,
-.AddDest-budget > input {
-  height: 40px;
-  background-color: #2F2F2F;
-  color: white;
-} 
-
-.AddDest-title > label,
-.AddDest-date > label,
-.AddDest-budget > label {
-  height: 40px;
-  vertical-align: middle;
-  line-height: 40px;
-  width: 152px;
-  text-align: right;
-} 
-
-.add-dest-button-group > button{
-  margin: 30px 20px 0 20px;
-  padding: 5px 10px;
-  border: 1px solid #131B23;
-  border-radius: 20px;
-}
-
-.cancel-add-dest-button:hover {
-  color: red;
-  cursor: pointer;
-}
-
-.add-dest-button:hover {
-  cursor: pointer;
-  color: #A8BCA1;
-}
-
-@media only screen and (max-width: 750px) {
-.AddDest-title,
-.AddDest-date,
-.AddDest-budget {
-  display: flex;
   flex-direction: column;
   margin: 0 auto 20px auto;
   justify-content: center;
@@ -99,4 +53,87 @@
   width: auto;
   text-align: center;
 } 
+
+/* .add-dest-button-group {
+  display: flex;
+} */
+
+.add-dest-button-group > button{
+  margin: 30px 20px 0 20px;
+  padding: 5px 10px;
+  border: 1px solid #131B23;
+  border-radius: 20px;
+}
+
+.cancel-add-dest-button:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.add-dest-button:hover {
+  cursor: pointer;
+  color: #A8BCA1;
+}
+
+@media(min-width: 750px) {
+  .AddDest-container {
+    background-color: #4C5C68;
+    height: 100vh;
+  }
+  .AddDest-title,
+  .AddDest-date,
+  .AddDest-budget {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 20px auto;
+    justify-content: center;
+    width: 100%;
+  }
+  .AddDest-title > input,
+  .AddDest-date > input,
+  .AddDest-budget > input {
+    height: 40px;
+    background-color: #2F2F2F;
+    color: white;
+  } 
+
+  .AddDest-title > label,
+  .AddDest-date > label,
+  .AddDest-budget > label {
+    height: 40px;
+    vertical-align: middle;
+    line-height: 40px;
+    width: fit-content;
+    text-align: right;
+  } 
+}
+
+@media (min-width: 500px) {
+  .AddDest-title,
+  .AddDest-date,
+  .AddDest-budget {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 20px auto;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .AddDest-title > input,
+  .AddDest-date > input,
+  .AddDest-budget > input {
+    height: 40px;
+    background-color: #2F2F2F;
+    color: white;
+  } 
+
+  .AddDest-title > label,
+  .AddDest-date > label,
+  .AddDest-budget > label {
+    height: 40px;
+    vertical-align: middle;
+    line-height: 40px;
+    width: fit-content;
+    text-align: right;
+  } 
 }
