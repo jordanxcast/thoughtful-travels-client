@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import ApiContext from '../ApiContext'
-import config from '../config'
+import ApiContext from '../../ApiContext'
+import config from '../../config'
 import './Item.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCompass} from '@fortawesome/free-solid-svg-icons'
-import TokenService from '../services/token-service'
-import ApiContext from '../ApiContext'
+import TokenService from '../../services/token-service'
+import ApiContext from '../../ApiContext'
+// import IdleService from '../../services/idle-service'
 import './NavBar.css'
 
 export default class NavBar extends Component {
@@ -27,14 +28,14 @@ export default class NavBar extends Component {
     }
   }
 
- 
-  
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
     this.context.handleAuthToken(null)
     this.setState({
       loggedIn: false
     })
+    // TokenService.clearCallbackBeforeExpiry()
+    // IdleService.unRegisterIdleResets()
   }
   
   renderLogoutLink() {

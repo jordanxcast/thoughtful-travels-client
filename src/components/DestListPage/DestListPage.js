@@ -2,18 +2,14 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import ApiContext from '../../ApiContext'
 import './DestListPage.css'
-import TokenService from '../../services/token-service'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class DestListPage extends Component {
   static contextType = ApiContext;
 
   componentDidMount() {
-    this.context.getDestinations()
-    if(!this.context.authToken){
-      this.props.history.push('/login')
-      TokenService.clearAuthToken()
-  }
+      this.context.getDestinations()
+    // setTimeout(()=>  this.context.getDestinations(), 100)
   }
 
   render(){
@@ -35,11 +31,6 @@ class DestListPage extends Component {
               <div className='DestDetails_Container'>
                 <div className='DestDetails_Date'>
                   Date: {dest.goal_date ? new Date(dest.goal_date).toDateString() : dest.goal_date}
-                  {/* {new Intl.DateTimeFormat("en-GB", {
-                    year: "numeric",
-                    month: "long",
-                    day: "2-digit"
-                  }).format(dest.goal_date)} */}
                 </div>
                 <div className='DestDetails_Budget'>
                   Budget: ${dest.budget}

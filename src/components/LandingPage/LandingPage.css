@@ -3,7 +3,7 @@ main {
 }
 
 .LP-sections > section {
-  padding: 30px 90px;
+  padding: 30px 50px;
   margin: 0;
 }
 
@@ -14,7 +14,6 @@ main {
 }
 
 .LP-sections > section:nth-child(odd){
-  /* background-color: #534D56; */
   background-color: #E9EBF8;
   color:  #131B23;
 }
@@ -28,17 +27,25 @@ main {
   padding: 30px;
   margin: 0;
   z-index: 11;
+}
+
+.LP-section-header {
   font-size: 20px;
+  margin-top: 0;
 }
 
 .LP-image {
-  width: 50%;
+  width: 90%;
 }
 
 .LP-sections{
   position: relative;
   top: 90px;
   color: #E9EBF8;
+}
+
+.LP-sections > p {
+  font-size: 16px;
 }
 
 .LP-link {
@@ -62,4 +69,48 @@ main {
 
 .LP-link:hover {
   color:  #808F85;
+}
+
+@media (min-width: 700px) {
+  .LP-image {
+    width: 50%;
+  }
+
+  .LP-sections > section {
+    padding: 30px 90px;
+    margin: 0;
+  }
+
+  .LP-section-header {
+    font-size: 20px;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .LP-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .LP-section > * {
+    flex: 1 1 0;
+  }
+
+  .LP-section > header {
+    margin: 0;
+    align-items: center;
+  }
+
+  .LP-section > p {
+    margin: 0;
+  }
+
+  .LP-image {
+    margin: 0 20px;
+    width: 40%;
+    align-self: center;
+  }
+  
 }

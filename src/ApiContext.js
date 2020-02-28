@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import config from './config'
+import TokenService from '../src/services/token-service'
+
 
 // export default React.createContext({
  const ApiContext = React.createContext({
@@ -34,11 +36,13 @@ export class ApiContextProvider extends Component {
   };
 
   handleGetDestinations = () => {
+
     fetch(`${config.API_ENDPOINT}/destinations`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'Authorization': `Bearer ${this.state.authToken}`
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+        // 'Authorization': `Bearer ${this.state.authToken}`
       }
     })
     .then(destinationsRes => {

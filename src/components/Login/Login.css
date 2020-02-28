@@ -19,6 +19,12 @@
   color: #131B23;
 }
 
+.Login > div  {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
 .password > input,
 .user_name >input {
   padding: 5px;
@@ -38,4 +44,14 @@
 .Login-submit:hover {
   cursor: pointer;
   border-color: #808F85;
+}
+
+@media (min-width: 500px) {
+  .Login > div {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin: 20px auto;
+    align-self: center;
+  }
 }

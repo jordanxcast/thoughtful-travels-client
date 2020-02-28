@@ -9,6 +9,7 @@
 
 .DestListPage_List{
   margin: 40px 0;
+  padding: 0;
 }
 
 .DestList-header{
@@ -63,11 +64,18 @@ li {
 
 }
 
-
-
 .DestDetails_Container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin-top: 20px;
+}
+
+@media (min-width:750px) {
+  .DestDetails_Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
 }

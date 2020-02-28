@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import ApiContext from '../ApiContext'
-import config from '../config'
-import TokenService from '../services/token-service'
+import ApiContext from '../../ApiContext'
+import config from '../../config'
+import TokenService from '../../services/token-service'
 import './AddDest.css'
 
 class AddDest extends Component {
@@ -90,50 +90,48 @@ class AddDest extends Component {
   render() {
     return (
       <div className='AddDest-container'> 
+        <div className='AddDest'>
+          <form
+            className='AddDest-form'
+            onSubmit={(e) => this.handleSubmit(e)}
+          >
+            <h2>Add Your Next Destination</h2>
+            <div className='AddDest-form-group'>
+              <div className='AddDest-title'>
+                <label htmlFor='dest-name'>* Destination Title:</label>
+                <input className='dest-name' id='dest-name' name='destName' type='text' required/>
+              </div>
+            
+              {/* {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)} */}
+              <div className='AddDest-date'>
+                <label htmlFor='dest-date'>Goal Date:</label>
+                <input className='dest-date' id='dest-date' name='destDate' type='date'/>
+              </div>
 
-      
-      <div className='AddDest'>
-        <form
-          className='AddDest-form'
-          onSubmit={(e) => this.handleSubmit(e)}
-        >
-          <h2>Add Your Next Destination</h2>
-          <div className='AddDest-form-group'>
-            <div className='AddDest-title'>
-              <label htmlFor='dest-name'>* Destination Title:</label>
-              <input className='dest-name' id='dest-name' name='destName' type='text' required/>
-            </div>
-           
-            {/* {this.state.error && (<ValidationError message={this.state.error} clearError={this.clearError}/>)} */}
-            <div className='AddDest-date'>
-              <label htmlFor='dest-date'>Goal Date:</label>
-              <input className='dest-date' id='dest-date' name='destDate' type='date'/>
+              <div className='AddDest-budget'>
+                <label htmlFor='dest-budget'>Budget ($):</label>
+                <input className='dest-budget' id='dest-budget' name='destBudget' type='number'/>
+              </div>
             </div>
 
-            <div className='AddDest-budget'>
-              <label htmlFor='dest-budget'>Budget ($):</label>
-              <input className='dest-budget' id='dest-budget' name='destBudget' type='number'/>
+            <div className='add-dest-button-group'>
+              <button
+                type='reset'
+                className='cancel-add-dest-button'
+                onClick={() => this.props.history.push('/destinations')}
+              >
+                Cancel
+              </button>
+              <button
+                type='submit'
+                className='add-dest-button'
+                disabled={this.state.error}
+              >
+                Save Destination
+              </button>
             </div>
-          </div>
-
-          <div className='add-dest-button-group'>
-            <button
-              type='reset'
-              className='cancel-add-dest-button'
-              onClick={() => this.props.history.push('/destinations')}
-            >
-              Cancel
-            </button>
-            <button
-              type='submit'
-              className='add-dest-button'
-              disabled={this.state.error}
-            >
-              Save Destination
-            </button>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
       </div>
     )
   }
