@@ -18,16 +18,37 @@ class DestMainPage extends Component {
     }
   }
 
+  
+
   //grab this value this.props.match.params.destId and send to the get fetch request 
   componentDidMount() {
+    if (this.context.authToken || TokenService.hasAuthToken()) {
+          const token = TokenService.getAuthToken()
+          // TokenService.saveAuthToken(token)
+          this.context.handleAuthToken(token)
+        }
     const destId = this.props.match.params.destId
     const authToken = this.context.authToken || TokenService.getAuthToken()
     if (authToken) {
       this.getDestination(destId, authToken)
       this.context.getItems(destId);
       this.context.getEntries(destId);
-    } 
+    }
   }
+
+formatDate = (date) => {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
 
   getDestination = (destId, token) => {
     fetch(`${config.API_ENDPOINT}/destinations/${destId}`, {
@@ -54,7 +75,7 @@ class DestMainPage extends Component {
     })
   }
 
-  validateDestTitle(value) {
+  validateDestTitle = (value) => {
     const title = value.trim()
     if(title.length === 0) {
       return 'A Destination Title is required'
@@ -63,18 +84,26 @@ class DestMainPage extends Component {
     }
   }
 
-  validateDestDate(value) {
+  validateDestDate = (value) => {
     if(value === '') {
       return null
     } return value
   }
 
-  validateDestBudget(value) {
+  validateDestBudget = (value) => {
     if(value === '') {
       return null
     } return value
   }
 
+  handleChangeDate = newDate => {
+    this.setState({
+      currentDest : {
+        ...this.state.currentDest,
+        goal_date: newDate
+      }
+    })
+  }
 
   handleClickEdit = e => {
     e.preventDefault()
@@ -84,7 +113,6 @@ class DestMainPage extends Component {
     const destTitle = this.validateDestTitle(e.target.destName.value)
     const destDate = this.validateDestDate(e.target.destDate.value)
     const destBudget = this.validateDestBudget(e.target.destBudget.value)
-
 
     fetch(`${config.API_ENDPOINT}/destinations/${destId}`, {
       method: 'PATCH',
@@ -137,9 +165,11 @@ class DestMainPage extends Component {
         console.error({ err })
       })
   }
+
   render() {
     const { items, entries } = this.context;
     const destId = this.props.match.params.destId
+    let currentDest = this.formatDate(this.state.currentDest.goal_date)
 
     return (
       <div className='DestMainPage'>
@@ -151,7 +181,7 @@ class DestMainPage extends Component {
             >
             <FontAwesomeIcon
             className='dest-back' icon='arrow-left'
-            />
+          />
           </button> 
           <button className='Dest-delete' type='button' onClick={this.handleClickDelete}>
             <FontAwesomeIcon icon='trash' className='delete-dest'/>
@@ -164,7 +194,7 @@ class DestMainPage extends Component {
             </div>
             <div className='DestMain-details'>
               <div className='DestMain-date'>
-                <input className='dest-date' id='dest-date' name='destDate' type='date' defaultValue={this.state.currentDest.goal_date} />  
+                <input className='dest-date' id='dest-date' name='destDate' type='date' value={currentDest} onChange={(e) => this.handleChangeDate(e.target.value)} />  
               </div>
               <div className='DestMain-budget'>
                 <input className='dest-budget' id='dest-budget' name='destBudget' type='number' defaultValue={this.state.currentDest.budget} /> 
@@ -172,9 +202,7 @@ class DestMainPage extends Component {
             </div>
             
             <button className='Dest-save-edits' type='submit' > Save </button>
-          </form>
-          
-          
+          </form>  
         </section>
         <section className='DestMainPage-items'>
         <h2 className='Entry-header'>My Bucket-List Items</h2>

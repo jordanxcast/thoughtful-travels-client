@@ -23,7 +23,6 @@ static contextType = ApiContext
       this.context.handleAuthToken(res.authToken)
     })
     .then(res => {
-      console.log(this.context.authToken, 'authToken in context')
       this.props.history.push('/destinations')
     })
   }
@@ -41,7 +40,6 @@ static contextType = ApiContext
       fullname: full_name.value,
     })
       .then(user => {
-        console.log(user, '!!!!')
         this.setState({
           username: user_name.value,
           password: password.value,

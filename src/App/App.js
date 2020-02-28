@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 // import config from '../config'
-// import PrivateRoute from '../Utils/PrivateRoute'
-// import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
 import LandingPage from '../components/LandingPage/LandingPage'
 import SignUp from '../components/SignUp/SignUp'
 import Login from '../components/Login/Login'
@@ -12,10 +10,20 @@ import DestMainPage from '../components/DestMainPage/DestMainPage'
 import AddDest from '../components/AddDest/AddDest'
 import AddEntry from '../components/AddEntry/AddEntry'
 import AddItem from '../components/AddItem/AddItem'
-// import ApiContext from '../ApiContext'
+import TokenService from '../services/token-service'
+import ApiContext from '../ApiContext'
 // import './App.css';
 
 class App extends Component {
+  static contextType = ApiContext
+
+  componentDidMount() {
+    if (this.context.authToken || TokenService.hasAuthToken()) {
+      const token = TokenService.getAuthToken()
+      TokenService.saveAuthToken(token)
+      this.context.handleAuthToken(token)
+    }
+  }
 
   render() {
     return (
