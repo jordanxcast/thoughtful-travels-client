@@ -5,7 +5,7 @@ Thoughtful Travels aims to empower it’s users by giving them a place to organi
 
 ## Login 
 You can create your own account or login using: 
-username: john-doe
+username: john_doe
 password: Jd#1234
 
 Have fun playing around on Thoughtful Travels! 
