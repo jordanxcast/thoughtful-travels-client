@@ -1,72 +1,96 @@
 .SignUp {
-  background-color: #878E99;
-  height: 100vh;
+  background-color: #878e99;
+  min-height: 100vh;
   margin: 0;
+  height: 120vh;
 }
 
 .SignUpForm {
   position: relative;
-  top: 100px;
-  border: 2px solid #131B23;
-  border-radius: 20px;
-  padding: 30px;
+  top: 90px;
+  /* border: 2px solid #131b23; */
+  border-radius: 0px;
+  padding: 30px 20px;
   margin: 0 10%;
-  box-shadow: 0px 0px 5px 6px rgba(0,0,0,0.7);
-  background-color: #B3BFB8;
-  color: #131B23;
+  box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.7);
+  background-color: #b3bfb8;
+  color: #131b23;
 }
 
+h1 {
+  margin: 50px 20px;
+}
 
 .SignUpForm > div {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin: 20px auto;
+  align-items: center;
 }
 
-
-.SignUpForm > h1 {
-  margin-top: 30px;
-  margin-bottom: 50px;
-}
-
-.full_name > input,
-.user_name > input,
-.password > input {
-  padding: 5px;
+#SignUpForm__full_name,
+#SignUpForm__password,
+#SignUpForm__user_name {
+  padding: 10px 15px;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 30px;
+  text-align: center;
+  background: transparent;
+  width: 80%;
+  line-height: 18px;
+  font-size: 16px;
+}
+
+#SignUpForm__full_name:focus,
+#SignUpForm__password:focus,
+#SignUpForm__user_name:focus,
+input:active,
+#SignUpForm__password:active,
+#SignUpForm__user_name:active {
+  border: 2px solid #fae3e3;
 }
 
 label {
   margin-right: 20px;
   font-size: 18px;
   margin-bottom: 10px;
+  width: 40%;
 }
 
-.full_name, .user_name, .password {
+.full_name,
+.user_name,
+.password {
   margin-bottom: 20px;
-  
 }
 
 .SignUp-submit {
   padding: 10px 20px;
   font-size: 16px;
-  border: 2px solid #627C85;
+  border: 2px solid #627c85;
+  color: #627c85;
   border-radius: 20px;
-  margin: 30px auto;
-
+  margin: 20px auto 10px;
+  background: transparent;
 }
 
 .SignUp-submit:hover {
   cursor: pointer;
-  border-color: #FAE3E3;
+  border-color: #fae3e3;
+  color: #fae3e3;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   .SignUpForm > div {
     display: flex;
     flex-direction: row;
-    width: fit-content;
-    margin: 20px auto;
+    width: 70%;
+    margin: 40px auto;
     align-self: center;
+    text-align: left;
+  }
+
+  .SignUpForm > label {
+    text-align: left;
   }
 }

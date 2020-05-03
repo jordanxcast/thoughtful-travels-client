@@ -1,59 +1,59 @@
 .DestListPage {
-  position: relative;
-  top: 40px;
-  padding: 50px 0 30px 0;
-  background-color: #E9EBF8;
-  height: 100vh;
-
+  padding: 100px 0 30px 0;
+  background-color: rgba(196, 207, 204, 0.85);
+  height: fit-content;
+  min-height: 100vh;
 }
 
-.DestListPage_List{
+.DestListPage_List {
   margin: 40px 0;
   padding: 0;
 }
 
-.DestList-header{
-  font-size: 45px;
-  color: #416165;
+.DestList-header {
+  font-size: 28px;
+  margin: 0px 50px 50px;
+  /* color: #416165; */
+  color: #131b23;
   /* text shadow: ; */
+  line-break: wrap;
 }
 
 .DestList-add-dest {
   text-decoration: none;
-  border: 1px solid #131B23;
+  border: 1px solid #131b23;
   margin: 30px 20px;
   padding: 10px;
   border-radius: 20px;
   font-size: 14px;
-  color: #131B23;
+  color: #131b23;
 }
 
-.DestList-add-dest:hover{
+.DestList-add-dest:hover {
   color: #416165;
   border-color: #416165;
 }
 
 .DestLink {
   text-decoration: none;
-  color: #FAE3E3;
+  color: #fae3e3;
   font-size: 22px;
   margin: 10px 0;
 }
 
 .DestList-item {
-  padding: 30px;
-  box-shadow: 0px 6px 5px 0px rgba(19, 27, 35, .75);
-  background-color: #131B23;
-  opacity: .75;
-  color: #FAE3E3;
+  padding: 30px 40px;
+  box-shadow: 0px 6px 5px 0px rgba(19, 27, 35, 0.75);
+  background-color: #131b23;
+  opacity: 0.75;
+  color: rgba(196, 207, 204, 0.85);
 }
 
-li:hover{
-  box-shadow: 0px 6px 5px 0px rgba(65, 97, 101, .75);
+li:hover {
+  box-shadow: 0px 6px 5px 0px rgba(65, 97, 101, 0.75);
   border-top: #416165;
   cursor: pointer;
   width: 90%;
-
 }
 
 li {
@@ -61,7 +61,6 @@ li {
   width: 80%;
   margin: auto;
   margin-bottom: 10px;
-
 }
 
 .DestDetails_Container {
@@ -70,12 +69,23 @@ li {
   justify-content: space-between;
   margin-top: 20px;
 }
+.DestDetails_Date {
+  margin-bottom: 10px;
+}
 
-@media (min-width:750px) {
+@media (min-width: 750px) {
   .DestDetails_Container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 20px;
+  }
+
+  .DestList-header {
+    font-size: 38px;
+    margin: 0px 50px 50px;
+    /* color: #416165; */
+    color: #131b23;
+    /* text shadow: ; */
   }
 }

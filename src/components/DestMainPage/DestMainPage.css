@@ -2,121 +2,128 @@
   position: relative;
   top: 40px;
   background-color: rgba(196, 207, 204, 0.85);
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
+  padding: 0px;
+}
+
+.DestMainPage-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
 }
 
 .DestMainPage-buttons > button {
-  position: absolute;
-  top: 20px;
-  margin: 0 20px 40px 20px;
-  padding: 5px 10px;
-  /* border: 1px solid #131B23; */
-  border-radius: 20px;
-  background-color: #46494C;
+  z-index: 11;
+  padding: 10px 15px;
+  background-color: transparent;
+  color: rgba(196, 207, 204, 0.85);
+  border: none;
+  font-size: 14px;
 }
 
-.DestMainPage-back{
-  left: 10px; 
+.DestMainPage-back {
+  left: 10px;
+  color: rgba(196, 207, 204, 0.85);
 }
 
-.DestMainPage-back:hover{
+.DestMainPage-back:hover {
   cursor: pointer;
-  color: #A8BCA1;
-  border-color: #A8BCA1;
+  color: #9f9aa4;
 }
 
-.dest-back {
-  color: #9F9AA4;
-  border-color: #9F9AA4;
-}
-
-.dest-back:hover {
-  color: #A8BCA1;
-  border-color: #A8BCA1;
-}
-
-.Dest-delete{
+.Dest-delete {
   right: 10px;
-  color: #131B23;
-  border-color: #9F9AA4;
+  color: #131b23;
 }
 
-.Dest-delete:hover{
+.Dest-delete:hover {
   cursor: pointer;
   color: red;
-  border-color: red;
-}
-
-.dest-delete {
-  color: #131B23;
-  border-color: #9F9AA4;
-}
-
-.dest-delete:hover {
-  color: red;
-  border-color: red;
 }
 
 .DestMainPage-overview {
-  box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75);
-  margin-top: 20px;
-  padding: 80px 10px 50px 10px;
-  background-color: #46494C;
-  color: #F2F7F2;
+  box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 40px 10px 50px 10px;
+  background-color: #46494c;
+  color: #f2f7f2;
   z-index: 12;
+  height: 30%;
 }
 
-.DestMainPage-add{
-  padding: 5px 10px;
-  border: 1px solid #131B23;
+.DestMainPage-add {
+  padding: 5px 20px;
+  border: none;
   border-radius: 20px;
-  margin: 0;
+  background: transparent;
+  margin: 30px 0px 0px;
+  font-size: 14px;
 }
+
 .DestMainPage-add-entry {
   padding: 5px 10px;
-  border: 1px solid #131B23;
-  border-radius: 20px;
-  margin: 0 0 40px 0;
+  border: none;
+  background: transparent;
+  margin: 30px 0px 0px;
+  font-size: 14px;
 }
 
-.Dest-save-edits{
+.Dest-save-edits {
   margin-top: 20px;
   margin-bottom: 0;
+  margin-right: 0px;
   padding: 5px 10px;
-  border: 1px solid #131B23;
+  border: 1px solid #131b23;
   border-radius: 20px;
+  background: transparent;
 }
 
 .Dest-save-edits:hover,
 .button-link:hover {
   cursor: pointer;
-  color: #A8BCA1;
-  border-color: #A8BCA1;
+  color: #a8bca1;
+  border-color: #a8bca1;
 }
 
-.button-link{
+.button-link {
   text-decoration: none;
-  color: #131B23;
+  color: #131b23;
 }
 
-.dest-name, 
+.save-container {
+  display: flex;
+  justify-content: center;
+  margin: 0px 20px;
+}
+.dest-name {
+  margin: 10px auto;
+  font-size: 30px;
+  width: 80%;
+}
+
+.dest-name,
 .dest-date,
 .dest-budget {
-  border: 1px solid #131B23;
-  border-radius: 10px;
-  font-size: 20px;
+  border: none;
+  font-size: 22px;
   text-align: center;
-  padding: 5px;
+  padding: 10px 10px;
   height: 100%;
-  margin: 10px 0;
-  width: 80%;
   justify-content: center;
-  background-color:  #F2F7F2;
-  color: black;
+  background: transparent;
+  color: rgba(196, 207, 204, 0.85);
 }
-.dest-date{
+
+.dest-budget {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.dest-date {
   text-align: right;
-  padding-right: 10%;
+  margin-left: 8%;
+  margin-bottom: 10px;
+  width: 80%;
 }
 
 .DestMain-name {
@@ -127,61 +134,87 @@
   position: relative;
   display: inline;
   font-size: 20px;
-  /* margin-left: 5px; */
+  text-align: right;
 }
 
 .DestMain-budget:before {
-  content: '$';
+  content: "$";
   position: absolute;
-  top: 25%;
-  left: 20%;
+  top: 22%;
+  left: 28%;
   z-index: 1;
-  color: black;
+  color: rgba(196, 207, 204, 0.85);
+  margin-left: 2%;
 }
 
-.DestMain-details{
+.DestMain-details {
   display: flex;
   flex-direction: column;
-  /* margin: 20px 20px; */
   justify-content: center;
 }
 
 .DestMainPage-items {
   margin: 0;
-  padding-bottom: 40px;
-  box-shadow: 0px 4px 5px 8px rgba(0,0,0,0.75);
+  padding: 60px 10px;
+  box-shadow: 0px 4px 5px 8px rgba(0, 0, 0, 0.75);
   z-index: 12;
-
 }
-.DestMainPage-entries{
-  margin: 0;
-  margin-bottom: 40px;
+
+.DestMainPage-entries {
+  margin: 0px 0px 40px;
   border-top: 2px solid black;
-  box-shadow: 0px 0px 5px 8px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 8px rgba(0, 0, 0, 0.75);
   height: auto;
-
 }
 
-.Entry-header{
+.Entry-header {
   font-size: 25px;
-  padding-top: 40px;
   margin-top: 0;
 }
 
 .Entries-header-container {
-  background-color: #9F9AA4;
+  background-color: #9f9aa4;
+  padding: 60px 10px;
 }
 
-@media (min-width: 430px) {
-  .dest-date{
+@media (max-width: 450px) {
+  .dest-date {
     text-align: center;
-    padding-left: 8%;
-    padding-right: 5%;
+    margin-left: 12%;
+    margin-bottom: 10px;
+    width: 80%;
   }
 }
 
-@media (min-width: 750px) {
+@media (max-width: 330px) {
+  .DestMain-budget:before {
+    content: "$";
+    position: absolute;
+    top: 22%;
+    left: 25%;
+    z-index: 1;
+    color: rgba(196, 207, 204, 0.85);
+  }
+}
 
+@media (min-width: 430px) {
+  .DestMain-budget:before {
+    content: "$";
+    position: absolute;
+    top: 22%;
+    left: 35%;
+    z-index: 1;
+    color: rgba(196, 207, 204, 0.85);
+  }
+  .dest-date {
+    text-align: center;
+    padding-left: 8%;
+    padding-right: 5%;
+    /* margin-left: 8%; */
+  }
+}
+
+@media (min-width: 550px) {
   .DestMain-name {
     width: 50%;
     margin: auto;
@@ -195,46 +228,56 @@
     width: 80%;
     display: flex;
     flex-direction: row;
-    margin: 20px auto;
-    justify-content: center;
-
+    margin: 0px auto;
+    justify-content: space-around;
+    align-items: space-between;
   }
 
-  .dest-name, 
+  .dest-name,
   .dest-date,
   .dest-budget {
-    border: 1px solid #131B23;
-    border-radius: 10px;
-    font-size: 20px;
+    border: none;
+    font-size: 22px;
     text-align: center;
-    padding: 5px;
+    padding: 10px 10px;
     height: 100%;
-    margin: 0 20px;
+    margin: 10px auto;
+    width: fit-content;
     justify-content: center;
-    background-color:  #F2F7F2;
-    color: black;
+    background: transparent;
+    color: rgba(196, 207, 204, 0.85);
+  }
+  .dest-name {
+    font-size: 30px;
+  }
+
+  .save-container {
+    justify-content: flex-end;
   }
 
   .DestMain-date {
-    margin-right: 5px;
+    /* margin-right: 5px; */
+    width: fit-content;
   }
-
-  
 
   .DestMain-budget {
     position: relative;
     display: inline;
     font-size: 20px;
-    margin-left: 5px;
+    margin-left: 40px;
+  }
+
+  .dest-budget {
+    margin: 10px 0px;
   }
 
   .DestMain-budget:before {
-    content: '$';
+    content: "$";
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 45%;
+    left: 22%;
+    /* margin: auto; */
     z-index: 1;
-    color: black;
+    color: rgba(196, 207, 204, 0.85);
   }
-
 }

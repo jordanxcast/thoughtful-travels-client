@@ -1,57 +1,108 @@
 .Login-container {
-  background-color: #E9EBF8;
-  height: 100vh;
+  background-color: #e9ebf8;
+  min-height: 100vh;
+  height: 120vh;
+  overflow: scroll;
+  padding: 10px;
   margin: 0;
 }
 
-.Login{
+.Login {
   position: relative;
   top: 100px;
   margin-top: 40px;
-  border: 2px solid #131B23;
-  border-radius: 20px;
-  padding: 30px;
+  /* border: 2px solid #131b23; */
+  border-radius: 0px;
+  padding: 30px 10px;
   display: flex;
   flex-direction: column;
-  margin: 0 10%;
-  box-shadow: 0px 0px 5px 6px rgba(0,0,0,0.7);
-  background-color: #B3BFB8;
-  color: #131B23;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.7);
+  background-color: #b3bfb8;
+  color: #131b23;
 }
 
-.Login > div  {
+h1 {
+  margin-top: 0px;
+}
+
+.Login > div {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  width: 100%;
+  margin: 30px auto 0px;
+  align-items: center;
+}
+label {
+  margin-bottom: 20px;
 }
 
 .password > input,
-.user_name >input {
-  padding: 5px;
+.user_name > input {
+  padding: 10px 15px;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 30px;
+  text-align: center;
+  background: transparent;
+  width: 80%;
+  line-height: 18px;
+  font-size: 16px;
+}
+
+input:active,
+input:focus {
+  border: 1px solid #fae3e3;
 }
 
 .Login-submit {
   align-self: center;
   padding: 10px 20px;
   font-size: 16px;
-  border: 2px solid #627C85;
+  border: 2px solid #627c85;
+  color: #627c85;
   border-radius: 20px;
-  margin-top: 30px;
+  margin: 30px auto;
+  background: transparent;
 }
 
 .Login-submit:hover {
   cursor: pointer;
-  border-color: #808F85;
+  border-color: #fae3e3;
+  color: #fae3e3;
 }
 
-@media (min-width: 500px) {
+.Login-signup {
+  margin: 10px;
+  color: #627c85;
+  text-decoration: none;
+}
+
+.Login-signup:hover {
+  color: #fae3e3;
+}
+
+@media (min-width: 600px) {
   .Login > div {
     display: flex;
     flex-direction: row;
-    width: fit-content;
+    width: 80%;
     margin: 20px auto;
     align-self: center;
+    text-align: left;
+  }
+  label {
+    margin-bottom: 0px;
+  }
+}
+
+@media (min-width: 800px) {
+  .Login > div {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin: 20px auto;
+    align-self: center;
+    text-align: left;
   }
 }
