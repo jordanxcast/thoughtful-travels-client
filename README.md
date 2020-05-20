@@ -21,7 +21,7 @@ https://thoughtful-travels.now.sh/
 - Node
 - Express
 - Knex
-Testing with: Jest, Enzyme, Mocha, Chai
+- Testing with: Jest, Enzyme, Mocha, Chai
 
 ## Server side: 
 Repo: https://github.com/jordanxcast/thoughtful-travels-server
