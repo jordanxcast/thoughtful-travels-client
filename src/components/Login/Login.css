@@ -1,5 +1,6 @@
 .Login-container {
-  background-color: #e9ebf8;
+  background-color: #ffffff;
+  width: 100vw;
   min-height: 100vh;
   height: 120vh;
   overflow: scroll;
@@ -11,15 +12,14 @@
   position: relative;
   top: 100px;
   margin-top: 40px;
-  /* border: 2px solid #131b23; */
   border-radius: 0px;
   padding: 30px 10px;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.7);
-  background-color: #b3bfb8;
+  background: transparent;
   color: #131b23;
 }
 
@@ -35,7 +35,7 @@ h1 {
   align-items: center;
 }
 label {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .password > input,
@@ -44,15 +44,17 @@ label {
   border: 1px solid black;
   border-radius: 30px;
   text-align: center;
-  background: transparent;
+  background: #f6f6f6;
   width: 80%;
   line-height: 18px;
   font-size: 16px;
+  margin: 0px;
+  color: #7098a9;
 }
 
 input:active,
 input:focus {
-  border: 1px solid #fae3e3;
+  border: 1px solid #7098a9;
 }
 
 .Login-submit {
@@ -68,8 +70,8 @@ input:focus {
 
 .Login-submit:hover {
   cursor: pointer;
-  border-color: #fae3e3;
-  color: #fae3e3;
+  border-color: #7079a9;
+  color: #7079a9;
 }
 
 .Login-signup {
@@ -79,24 +81,26 @@ input:focus {
 }
 
 .Login-signup:hover {
-  color: #fae3e3;
+  color: #7079a9;
 }
 
 @media (min-width: 600px) {
   .Login > div {
-    display: flex;
-    flex-direction: row;
     width: 80%;
     margin: 20px auto;
     align-self: center;
-    text-align: left;
+    text-align: center;
   }
   label {
-    margin-bottom: 0px;
+    margin: 0px 0px 10px 0px;
   }
 }
 
 @media (min-width: 800px) {
+  .Login {
+    max-width: 680px;
+    margin: auto;
+  }
   .Login > div {
     display: flex;
     flex-direction: row;
@@ -104,5 +108,10 @@ input:focus {
     margin: 20px auto;
     align-self: center;
     text-align: left;
+    max-width: 500px;
+  }
+
+  label {
+    margin-right: 0px;
   }
 }

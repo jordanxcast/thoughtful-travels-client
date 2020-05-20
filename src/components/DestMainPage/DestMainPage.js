@@ -186,16 +186,6 @@ class DestMainPage extends Component {
             </button>
           </div>
           <form onSubmit={(e) => this.handleClickEdit(e)}>
-            {/* <div className="DestMain-name"> */}
-            <input
-              className="dest-name"
-              id="dest-name"
-              name="destName"
-              type="text"
-              required
-              defaultValue={this.state.currentDest.dest_title}
-            />
-            {/* </div> */}
             <div className="DestMain-details">
               <div className="DestMain-date">
                 <input
@@ -207,6 +197,14 @@ class DestMainPage extends Component {
                   onChange={(e) => this.handleChangeDate(e.target.value)}
                 />
               </div>
+              <textarea
+                className="dest-name"
+                id="dest-name"
+                name="destName"
+                type="text"
+                required
+                defaultValue={this.state.currentDest.dest_title}
+              />
               <div className="DestMain-budget">
                 <input
                   className="dest-budget"
@@ -217,30 +215,41 @@ class DestMainPage extends Component {
                 />
               </div>
             </div>
-            <div className="save-container">
+            {/* <div className="save-container">
               <button className="Dest-save-edits" type="submit">
                 {" "}
                 Save{" "}
               </button>
-            </div>
+            </div> */}
           </form>
         </section>
         <section className="DestMainPage-items">
-          <h2 className="Entry-header">My Bucket-List Items</h2>
-          {items.map((item) => {
-            return (
-              <Item
-                key={item.item_id}
-                id={item.item_id}
-                content={item.item_content}
-              />
-            );
-          })}
-          <button type="button" className="DestMainPage-add">
-            <Link to={`/${destId}/add-item`} className="button-link">
-              <FontAwesomeIcon icon="plus-circle" /> Item
-            </Link>
-          </button>
+          <div className="Items-header-add-btn">
+            <h2 className="Entry-header">Bucket-List Items</h2>
+            <button type="button" className="DestMainPage-add">
+              <Link to={`/${destId}/add-item`} className="button-link">
+                <FontAwesomeIcon icon="plus-circle" /> Item
+              </Link>
+            </button>
+          </div>
+          <div className="items-container">
+            {items.length > 0 ? (
+              items.map((item) => {
+                return (
+                  <Item
+                    key={item.item_id}
+                    id={item.item_id}
+                    content={item.item_content}
+                  />
+                );
+              })
+            ) : (
+              <div className="no-items">
+                {" "}
+                Add some bucket-list items for your next destination!
+              </div>
+            )}
+          </div>
         </section>
         <section className="DestMainPage-entries">
           <div className="Entries-header-container">

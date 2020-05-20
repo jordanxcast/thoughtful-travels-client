@@ -4,26 +4,28 @@
   position: fixed;
   top: 0;
   width: 100%;
-  border: 1px solid #131B23;
+  border: 1px solid #7098a9;
   padding: 20px;
   justify-content: space-between;
-  background-color: #131B23;
-  color: #F2F7F2;
-  box-shadow: 0px 6px 5px 0px rgba(0,0,0,0.75);
+  background-color: #7098a9;
+  color: #f2f7f2;
+  /* box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75); */
   z-index: 12;
 }
 
 .NavBar-link {
   text-decoration: none;
-  color: #F2F7F2;
+  color: #f2f7f2;
 }
 
 .NavBar-link:active {
   color: #656176;
+  border-bottom: 2px solid #656176;
 }
 
 .NavBar-link:hover {
-  color: #808F85;
+  color: #656176;
+  border-bottom: 2px solid #656176;
 }
 
 .NavBar_not-logged-in > .NavBar-link {

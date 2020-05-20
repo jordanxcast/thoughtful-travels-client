@@ -1,5 +1,5 @@
 .SignUp {
-  background-color: #878e99;
+  background-color: #ffffff;
   min-height: 100vh;
   margin: 0;
   height: 120vh;
@@ -8,12 +8,10 @@
 .SignUpForm {
   position: relative;
   top: 90px;
-  /* border: 2px solid #131b23; */
-  border-radius: 0px;
   padding: 30px 20px;
   margin: 0 10%;
   box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.7);
-  background-color: #b3bfb8;
+  background-color: #ffffff;
   color: #131b23;
 }
 
@@ -40,6 +38,8 @@ h1 {
   width: 80%;
   line-height: 18px;
   font-size: 16px;
+  margin: 0px;
+  color: #627c85;
 }
 
 #SignUpForm__full_name:focus,
@@ -48,13 +48,13 @@ h1 {
 input:active,
 #SignUpForm__password:active,
 #SignUpForm__user_name:active {
-  border: 2px solid #fae3e3;
+  border: 2px solid #7098a9;
 }
 
 label {
   margin-right: 20px;
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   width: 40%;
 }
 
@@ -81,16 +81,17 @@ label {
 }
 
 @media (min-width: 600px) {
+  .SignUpForm {
+    max-width: 680px;
+    margin: auto;
+  }
   .SignUpForm > div {
     display: flex;
     flex-direction: row;
     width: 70%;
+    max-width: 500px;
     margin: 40px auto;
     align-self: center;
-    text-align: left;
-  }
-
-  .SignUpForm > label {
-    text-align: left;
+    text-align: center;
   }
 }
