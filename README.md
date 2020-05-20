@@ -27,7 +27,7 @@ Testing with: Jest, Enzyme, Mocha, Chai
 Repo: https://github.com/jordanxcast/thoughtful-travels-server
 
 ## Screenshots: 
-![](src/Images/laptop-dest-list-view.png)
-![](src/Images/laptop-dest-main-view.png)
-![](src/Images/laptop-entries-view.png)
-![](images/items-view.png)
+![](src/Images/TT_DestListPage.png)
+![](src/Images/TT_DestMainPage.png)
+![](src/Images/TT_DestEntries.png)
+
