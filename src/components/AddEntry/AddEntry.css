@@ -1,7 +1,7 @@
 .AddEntry {
   position: relative;
   padding: 100px 0px;
-  background-color: #eafffd;
+  background-color: #ffffff;
   height: fit-content;
 }
 
@@ -9,11 +9,12 @@
   box-shadow: 0px 0px 5px 6px rgba(0, 0, 0, 0.7);
   justify-self: center;
   padding: 30px;
-  margin: 0 10%;
+  margin: 0 auto;
   border-radius: 0px;
-  background-color: #4c5c68;
-  color: white;
+  background-color: #f6f6f6;
+  color: #000000;
   border: none;
+  max-width: 800px;
 }
 
 .AddEntry-form-group {
@@ -36,7 +37,7 @@
   border-radius: 20px;
   border: 1px solid #9f9aa4;
   font-size: 18px;
-  color: rgba(196, 207, 204, 0.85);
+  color: #000000;
 }
 
 .AddEntry-form-group > textarea {
@@ -49,9 +50,16 @@
   border: 1px solid #9f9aa4;
   font-size: 18px;
   background: transparent;
-  color: rgba(196, 207, 204, 0.85);
+  color: #000000;
 }
-
+.AddEntry-form-group > input:hover,
+.AddEntry-form-group > input:active,
+.AddEntry-form-group > input:focus,
+.AddEntry-form-group > textarea:hover,
+.AddEntry-form-group > textarea:active,
+.AddEntry-form-group > textarea:focus {
+  border: 1px solid #7098a9;
+}
 .add-entry-button-group {
   display: flex;
   flex-direction: row;
@@ -85,7 +93,7 @@
     width: 80%;
     height: 200px;
     align-self: center;
-    padding: 10px;
+    padding: 30px;
     margin: 10px 0 20px 0;
     border-radius: 20px;
     border: 1px solid #9f9aa4;

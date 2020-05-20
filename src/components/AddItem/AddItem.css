@@ -1,7 +1,7 @@
 .AddItem {
   position: relative;
   padding-top: 100px;
-  background-color: #eafffd;
+  background-color: #ffffff;
   height: 100vh;
 }
 
@@ -9,12 +9,13 @@
   box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.7);
   justify-self: center;
   padding: 40px;
-  margin: 0 10%;
+  margin: 0 auto;
   border-radius: 0px;
-  background-color: #4c5c68;
-  color: white;
+  background-color: #f6f6f6;
+  color: #000000;
   border: 1px solid black;
   display: flex;
+  max-width: 800px;
   flex-direction: column;
 }
 
@@ -25,11 +26,11 @@
 input {
   height: 40px;
   margin: 10px auto 30px;
-  background-color: #4c5c68;
-  color: white;
+  background-color: transparent;
+  color: #000000;
   width: 100%;
   border-radius: 10px;
-  border: 1px solid white;
+  border: 1px solid #000000;
   font-size: 18px;
   padding: 10px;
   text-align: center;

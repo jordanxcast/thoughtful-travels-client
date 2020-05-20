@@ -45,7 +45,7 @@ export default class Login extends Component {
     return (
       <div className="Login-container">
         <form className="Login" onSubmit={this.handleSubmitJwtAuth}>
-          <h1>Login to Begin your Journey</h1>
+          <h1>Login</h1>
           <div className="user_name">
             <label htmlFor="Login-user-name">*User name</label>
             <input name="user_name" id="Login-user-name"></input>

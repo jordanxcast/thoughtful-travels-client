@@ -61,7 +61,7 @@ static contextType = ApiContext
           className='SignUpForm'
           onSubmit={this.handleSubmit}
         >
-          <h1>Create your Thoughtful Tavels Account</h1>
+          <h1>Create Account</h1>
           {/* <div role='alert'>
             {error && <p className='red'>{error}</p>}
           </div> */}

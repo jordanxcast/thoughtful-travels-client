@@ -1,8 +1,7 @@
 .DestMainPage {
   position: relative;
-  top: 40px;
-  background-color: rgba(196, 207, 204, 0.85);
-  height: fit-content;
+  top: 50px;
+  height: 100%;
   min-height: 100vh;
   padding: 0px;
 }
@@ -10,7 +9,7 @@
 .DestMainPage-buttons {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  margin: 10px 20px 5px;
 }
 
 .DestMainPage-buttons > button {
@@ -43,12 +42,11 @@
 }
 
 .DestMainPage-overview {
-  box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.75);
-  padding: 40px 10px 50px 10px;
-  background-color: #46494c;
-  color: #f2f7f2;
+  background-color: #f1f1f1;
   z-index: 12;
-  height: 30%;
+  min-height: 190px;
+  color: #000000;
+  padding: 30px 0px;
 }
 
 .DestMainPage-add {
@@ -64,7 +62,7 @@
   padding: 5px 10px;
   border: none;
   background: transparent;
-  margin: 30px 0px 0px;
+  margin: 0px 0px 0px;
   font-size: 14px;
 }
 
@@ -95,28 +93,29 @@
   justify-content: center;
   margin: 0px 20px;
 }
-.dest-name {
-  margin: 10px auto;
-  font-size: 30px;
-  width: 80%;
-}
 
 .dest-name,
 .dest-date,
 .dest-budget {
   border: none;
-  font-size: 22px;
   text-align: center;
   padding: 10px 10px;
   height: 100%;
   justify-content: center;
   background: transparent;
-  color: rgba(196, 207, 204, 0.85);
+}
+
+.dest-name {
+  margin: 10px auto;
+  font-size: 32px;
+  width: 80%;
+  line-height: 32px;
 }
 
 .dest-budget {
   width: 100%;
   margin-left: 10px;
+  font-size: 22px;
 }
 
 .dest-date {
@@ -124,10 +123,20 @@
   margin-left: 8%;
   margin-bottom: 10px;
   width: 80%;
+  font-size: 22px;
 }
 
-.DestMain-name {
-  margin-bottom: 0;
+.dest-name:hover,
+.dest-name:active,
+.dest-name:focus,
+.dest-date:hover,
+.dest-date:active,
+.dest-date:focus,
+.dest-budget:hover,
+.dest-budget:active,
+.dest-budget:focus {
+  border: 1px solid #7098a9;
+  border-radius: 10px;
 }
 
 .DestMain-budget {
@@ -143,7 +152,6 @@
   top: 22%;
   left: 28%;
   z-index: 1;
-  color: rgba(196, 207, 204, 0.85);
   margin-left: 2%;
 }
 
@@ -151,30 +159,59 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 80%;
+  margin: auto;
 }
 
 .DestMainPage-items {
-  margin: 0;
+  margin: auto;
   padding: 60px 10px;
-  box-shadow: 0px 4px 5px 8px rgba(0, 0, 0, 0.75);
   z-index: 12;
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Items-header-add-btn {
+  width: 100%;
+  margin: auto;
+}
+
+.items-container {
+  width: 100%;
+  margin: 30px auto 0px;
+  border: 2px solid #7098a9;
+  border-radius: 10px;
+  height: 300px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+.no-items {
+  margin: auto;
+  width: 100%;
+  font-style: italic;
+  color: #9b9b9b;
 }
 
 .DestMainPage-entries {
-  margin: 0px 0px 40px;
-  border-top: 2px solid black;
-  box-shadow: 0px 0px 5px 8px rgba(0, 0, 0, 0.75);
+  margin: 0px 0px 0px;
   height: auto;
+  background-color: #f6f6f6;
+  padding-bottom: 30px;
 }
 
 .Entry-header {
   font-size: 25px;
   margin-top: 0;
+  width: 100%;
 }
 
 .Entries-header-container {
-  background-color: #9f9aa4;
-  padding: 60px 10px;
+  padding: 30px 10px;
 }
 
 @media (max-width: 450px) {
@@ -214,22 +251,14 @@
   }
 }
 
-@media (min-width: 550px) {
-  .DestMain-name {
-    width: 50%;
-    margin: auto;
-  }
-
-  .dest-name {
-    width: fit-content;
-  }
-
+@media (min-width: 700px) {
   .DestMain-details {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    margin: 0px auto;
+    margin: 0px;
     justify-content: space-around;
+    word-wrap: break-word;
     align-items: space-between;
   }
 
@@ -239,16 +268,21 @@
     border: none;
     font-size: 22px;
     text-align: center;
-    padding: 10px 10px;
+    padding: 0px;
     height: 100%;
-    margin: 10px auto;
+    margin: 0px;
     width: fit-content;
     justify-content: center;
     background: transparent;
-    color: rgba(196, 207, 204, 0.85);
+    color: #000000;
   }
   .dest-name {
-    font-size: 30px;
+    font-size: 42px;
+    text-align: center;
+    width: 30%;
+    padding: 10px 0px;
+    line-height: 42px;
+    height: fit-content;
   }
 
   .save-container {
@@ -256,15 +290,18 @@
   }
 
   .DestMain-date {
-    /* margin-right: 5px; */
     width: fit-content;
+  }
+
+  .dest-date {
+    margin: 10px 0px;
   }
 
   .DestMain-budget {
     position: relative;
     display: inline;
     font-size: 20px;
-    margin-left: 40px;
+    margin-left: 0px;
   }
 
   .dest-budget {
@@ -275,9 +312,30 @@
     content: "$";
     position: absolute;
     top: 45%;
-    left: 22%;
-    /* margin: auto; */
+    left: 18%;
     z-index: 1;
-    color: rgba(196, 207, 204, 0.85);
+  }
+
+  .DestMainPage-items {
+    margin: auto;
+    padding: 60px 10px 40px;
+    z-index: 12;
+    background-color: #ffffff;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .Items-header-add-btn {
+    width: 45%;
+    margin: auto;
+  }
+
+  .items-container {
+    width: 55%;
+    margin: auto 30px auto 0px;
+    border: 2px solid #7098a9;
+    border-radius: 0px;
+    height: 300px;
+    overflow: auto;
   }
 }

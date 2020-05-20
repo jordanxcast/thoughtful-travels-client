@@ -1,5 +1,61 @@
 main {
   text-align: center;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.LP-header {
+  color: #131b23;
+  position: relative;
+  top: 80px;
+  padding: 80px 10px;
+  margin: 0;
+  z-index: 11;
+}
+
+.LP-header > h1 {
+  font-size: 45px;
+  margin-bottom: 0px;
+  word-wrap: break-word;
+}
+
+.LP-header > h2 {
+  margin-top: 5px;
+}
+
+.header-icon {
+  margin-right: 10px;
+}
+
+.LP-sections {
+  position: relative;
+  top: 95px;
+  color: #131b23;
+}
+
+p {
+  font-size: 18px;
+  text-align: center;
+  padding-right: 0px;
+  margin: 0px auto 20px;
+}
+
+.LP-section {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 50px;
+  margin: 0;
+}
+
+.reversed {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.LP-section > header {
+  align-items: center;
 }
 
 .LP-section-header {
@@ -8,101 +64,91 @@ main {
 }
 
 .LP-sections > section {
-  padding: 150px 50px;
+  align-items: center;
+  padding: 80px 20px;
   margin: 0;
-}
-
-.LP-sections > section:nth-child(even) {
-  background-color: #656176;
-  color: #ebd8d0;
 }
 
 .LP-sections > section:nth-child(odd) {
-  background-color: #e9ebf8;
+  background-color: #f1f1f1;
   color: #131b23;
-}
-
-.LP-header {
-  color: #131b23;
-  position: relative;
-  top: 80px;
-  /* background-color: #FAE3E3; */
-  background-color: #808f85;
-  box-shadow: 0px 0px 5px 6px rgba(0, 0, 0, 0.75);
-  padding: 80px 30px;
-  margin: 0;
-  z-index: 11;
-}
-
-.LP-header > h1 {
-  font-size: 38px;
 }
 
 .LP-image {
-  width: 90%;
+  width: 100%;
 }
 
-.LP-sections {
-  position: relative;
-  top: 95px;
-  color: #e9ebf8;
+.LP-signUp {
+  padding: 50px;
+  height: fit-content;
 }
 
-.LP-sections > p {
-  font-size: 20px;
-  text-align: left;
-  padding-right: 30px;
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .LP-link {
   text-decoration: none;
   width: fit-content;
   font-size: 16px;
-  border: 1px solid #131b23;
+  border: 1px solid #f2f7f2;
   border-radius: 30px;
   padding: 10px 30px;
-  background-color: #131b23;
+  background: transparent;
   color: #f2f7f2;
+  margin: 20px 20px 0px 20px;
 }
 
 .LP-link-button {
   font-size: 16px;
   width: fit-content;
-  border: 1px solid #131b23;
+  border: 1px solid #f2f7f2;
   border-radius: 30px;
   padding: 10px 30px;
-  background-color: #131b23;
+  background: transparent;
   color: #f2f7f2;
 }
 
-/* .LP-link-button:hover {
-  color: #808f85;
-  border: 2px solid #808f85;
-} */
-
 .LP-link:hover {
-  color: #808f85;
-  border: 2px solid #808f85;
+  color: #7079a9;
+  border: 1px solid #7079a9;
+  background-color: #f2f7f2;
   cursor: pointer;
+}
+
+#LP-SignUp {
+  padding: 50px 20px;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  background-color: rgba(112, 121, 169, 0.5);
+}
+
+#LP-SignUp > h3 {
+  margin: 0;
 }
 
 @media (min-width: 700px) {
   .LP-image {
-    width: 50%;
+    width: 80%;
   }
 
-  section > p {
+  p {
     font-size: 20px;
     width: 80%;
-    margin: auto;
+    margin: 0px auto 20px;
+  }
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 
   .LP-sections > section {
-    padding: 100px 30px;
+    padding: 50px;
     margin: 0;
-  }
-  .LP-signUp {
-    padding: 100px 90px;
   }
 
   .LP-section-header {
@@ -114,7 +160,7 @@ main {
 @media (min-width: 900px) {
   .LP-section {
     display: flex;
-    width: 100%;
+    width: 100vw;
     flex-direction: row;
     align-items: center;
   }
@@ -122,28 +168,28 @@ main {
   .LP-section > .LP-signUp {
     padding: 100px 90px;
   }
+
   .LP-section > * {
     flex: 1 1 0;
   }
 
   .LP-section > header {
-    width: 30%;
-  }
-
-  .LP-section > header {
-    margin: 0px;
+    width: 40%;
+    margin: 0px 10px 0px 0px;
     align-items: center;
+    font-size: 30px;
   }
 
   p {
-    margin: 0px 0px 0px 20px;
+    font-size: 24px;
+    margin: auto;
     height: 100%;
-    width: 30%;
+    width: 90%;
   }
 
   .LP-image {
+    width: 50%;
     margin: 0px;
-    width: 30%;
     align-self: center;
   }
 }
